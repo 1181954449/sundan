@@ -44,6 +44,15 @@ public class Util {
         String json = JSON.toJSONString(maps);
         return json;
     }
+    public static String creatJson(int errCode, String msg, Object data){
+        Map<String,Object> maps = new HashMap<>();
+        maps.put("errCode", errCode);
+        maps.put("msg", msg);
+        maps.put("data",data);
+        String json = JSON.toJSONString(maps);
+        return json;
+    }
+
     public static PrintWriter getWriter(HttpServletResponse response){
         PrintWriter writer =null;
         try {

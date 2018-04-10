@@ -17,7 +17,10 @@
 		<result column="goodsFirstPicture" property="goodsFirstPic" jdbcType="VARCHAR" />
 		<result column="isHot" property="isHot" jdbcType="VARCHAR" />
 		<result column="category_goods" property="category" jdbcType="VARCHAR" />
+		<result column="goods_attrbute" property="goods_attrbute" />
 	</resultMap>
+
+
 	<select parameterType="String" id="globalSearch" resultMap="goodsInfoResult">
 		<bind name="keyWord" value="'%'+_parameter+'%'"/>
 		SELECT * FROM sun_goods WHERE goodsTitle LIKE #{keyWord}
@@ -164,5 +167,79 @@
 		<![CDATA[select * from sun_goods
 		   WHERE
 		   goodsId < (select max(goodsId) from sun_goods) and goodsId > (select (max(goodsId)-9) from sun_goods)]]>
+	</select>
+
+
+
+
+
+	<!--    private int goods_typeId;
+    private String goodskey;
+    private String goodsvalue;
+    private String goods_id;
+    private int goods_type_number-->
+
+	<resultMap id="GoodsImgResult" type="goods_img">
+		<id column="goodsImgId" property="goodsImgId"/>
+		<result column="goodsImg" property="goodsImg"/>
+		<result column="goods_id" property="goods_id"/>
+		<result column="goods_details" property="goods_details"/>
+		<result column="goods_type_number" property="goods_type_number"/>
+	</resultMap>
+	<resultMap id="GoodsTypeResult" type="Goods_type">
+		<id column="goods_typeId" property="goods_typeId"/>
+		<result column="goodskey" property="goodskey"/>
+		<result column="goodsvalue" property="goodsvalue"/>
+		<result column="goods_id" property="goods_id"/>
+		<result column="goods_type_number" property="goods_type_number"/>
+	</resultMap>
+	<sql id="findGoodsDetails">
+		goodsId,goodsTitle,price,goods_attrbute
+	</sql>
+	<select id="findgoodsdDetails" resultMap="goodsInfoResult" parameterType="int">
+		SELECT 
+		<include refid="findGoodsDetails"/>
+		FROM
+		sun_goods
+		WHERE
+		goodsId = #{0}
+	</select>
+
+	<sql id="findGoodsImg">
+		goodsImgId, goods_id, goodsImg, goods_details
+	</sql>
+	<select id="findgoodsImg" resultMap="GoodsImgResult" parameterType="int">
+		SELECT
+		<include refid="findGoodsImg"/>
+		FROM
+		sun_goods_img
+		where
+		goods_Id = #{0}
+		and
+		goods_details = 'details'
+		or
+		goods_type_number LIKE '%1'
+	</select>
+	<sql id="findGoodType">
+		goodskey, goodsvalue, goods_id, goods_typeId
+	</sql>
+	<select id="findgoodsType" resultMap="GoodsTypeResult" parameterType="int">
+		SELECT
+		<include refid="findGoodType"/>
+		FROM
+		sun_goods_type
+		WHERE
+		goods_id = #{0}
+	</select>
+	<!--根据穿过来的type查询图片的编号-->
+	<select id="findgoodsTypeNumber" resultType="int" parameterType="Goods_type">
+		SELECT
+		goods_type_number
+		FROM
+		sun_goods_type
+		WHERE
+		goodsvalue = #{goodsvalue}
+		and
+		good_id = #{good_id}
 	</select>
 </mapper>

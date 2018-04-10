@@ -3,10 +3,12 @@ package com.lanou.impl;
 import com.alibaba.fastjson.JSON;
 import com.lanou.dao.GoodsDao;
 import com.lanou.entity.Goods;
+import com.lanou.entity.Goods_type;
 import com.lanou.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lanou.entity.goods_img;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,4 +83,20 @@ public class GoodsServiceImp implements GoodsService{
     }
 
 
+    @Override
+    public Goods findgoodsdDetails(int goodsId) {
+        Goods goods = goodsDao.findgoodsdDetails(goodsId);
+        List<goods_img> imgList = goodsDao.findgoodsImg(goodsId);
+        List<Goods_type> typeList = goodsDao.findgoodsType(goodsId);
+        goods.setGoods_imgs(imgList);
+        goods.setGoods_types(typeList);
+        return goods;
+    }
+
+    @Override
+    public List<goods_img> findgoodsCutImg(Goods_type goods_type) {
+//        int i = goodsDao.findgoodsTypeNumber(goods_type);
+//        System.out.print(i);
+        return null;
+    }
 }

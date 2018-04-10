@@ -2,6 +2,7 @@ package com.lanou.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.lanou.entity.Goods;
+import com.lanou.entity.Goods_type;
 import com.lanou.service.GoodsService;
 import com.lanou.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
+    // 推荐  前八个商品
     @RequestMapping("/findGoodsByRecommend")
     public void findGoodsByRecommend(HttpServletResponse response){
         Util.crossomain(response);
@@ -28,4 +30,22 @@ public class GoodsController {
         List<Goods> goodsByRecommend = goodsService.findGoodsByRecommend();
         writer.append(JSON.toJSONString(goodsByRecommend));
     }
+
+    // 商品详情
+    @RequestMapping("/goodsdetails")
+    public void findgoodsdDetails(HttpServletResponse response, int goodsId){
+        Util.crossomain(response);
+        PrintWriter writer = Util.getWriter(response);
+        Goods goods = goodsService.findgoodsdDetails(goodsId);
+        String json = Util.creatJson(0, "商品详情页查询成功", goods);
+        writer.append(json);
+    }
+
+    // 商品详情切换图片
+//    @RequestMapping("/goodsCutImg")
+//    public void findgoodsCutImg(Goods_type goods_type,  HttpServletResponse response){
+//        Util.crossomain(response);
+//        PrintWriter writer = Util.getWriter(response);
+//
+//    }
 }
