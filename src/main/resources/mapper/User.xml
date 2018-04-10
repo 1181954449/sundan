@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	    private int userId;
+		private String userName;
+		private String userPassword;
+		private String userPhone;
+		private String userHeadimg;
+		private String userEmail;
+		private String userDate;
+
+		private int billId;
+		private String billCompanyName;
+		private String billCompanyAddress;
+		private String billOpenBank;
+		private String billPayTaxes;
+		private String billBankCard;
+		private String billBankCardPhone;
+ -->
+<mapper namespace="com.lanou.dao.UserDao">
+<resultMap type="User" id="UserInfoResult">
+	<id column="userId" property="userId" javaType="int"/>
+	<result column="userName" property="userName" jdbcType="VARCHAR"/>
+	<result column="userPassword" property="userPassword" jdbcType="VARCHAR"/>
+	<result column="userPhone" property="userPhone" jdbcType="VARCHAR"/>
+	<result column="userHeadimg" property="userHeadimg" jdbcType="VARCHAR"/>
+	<result column="userEmail" property="userEmail" jdbcType="VARCHAR"/>
+	<result column="userDate" property="userDate" jdbcType="VARCHAR"/>
+	<result column="userPayPass" property="userPayPass" jdbcType="VARCHAR"/>
+	<association property="bill" javaType="Bill">
+		<id column="billId" property="billId" javaType="int"/>
+		<result column="billCompanyName" property="billCompanyName" jdbcType="VARCHAR"/>
+		<result column="billCompanyAddress" property="billCompanyAddress" jdbcType="VARCHAR"/>
+		<result column="billOpenBank" property="billOpenBank" jdbcType="VARCHAR"/>
+		<result column="billPayTaxes" property="billPayTaxes" jdbcType="VARCHAR"/>
+		<result column="billBankCard" property="billBankCard" jdbcType="VARCHAR"/>
+		<result column="billBankCardPhone" property="billBankCardPhone" jdbcType="VARCHAR"/>
+	</association>
+</resultMap>
+	<!--用户注册-->
+<insert id="userReg" parameterType="User">
+	INSERT  INTO sun_user  (userName,userPassword) values ('${userName}','${userPassword}');
+</insert>
+	<!--用户手机号码注册-->
+	<insert id="userPhoneReg" parameterType="User">
+		INSERT  INTO sun_user  (userPhone,userPassword,userPayPass) values ('${userPhone}','${userPassword}','${userPayPass}');
+	</insert>
+	<insert id="saveBill" parameterType="User">
+		INSERT INTO  sun_bill (billCompanyName,billCompanyAddress,
+		billOpenBank,billPayTaxes,billBankCard,billBankCardPhone,bill_userId) VALUES  ('${bill.billCompanyName}',
+		'${bill.billCompanyAddress}','${bill.billOpenBank}','${bill.billPayTaxes}',
+		'${bill.billBankCard}','${bill.billBankCardPhone}','${userId}');
+	</insert>
+	<!--查找用户手机号码-->
+	<select id="findUserPhone" parameterType="User" resultMap="UserInfoResult">
+		SELECT * FROM  sun_user WHERE userPhone = '${userPhone}'
+	</select>
+	<!--用户登录-->
+	<select id="userLogin" parameterType="User" resultMap="UserInfoResult">
+		SELECT * FROM  sun_user WHERE userName = '${userName}' and userPassword = '${userPassword}'
+	</select>
+	<!--用户手机号码登录-->
+	<select id="userPhoneLogin" parameterType="User" resultMap="UserInfoResult">
+		SELECT * FROM  sun_user WHERE userPhone = '${userName}' and userPassword = '${userPassword}'
+	</select>
+	<!--用户邮箱登录-->
+	<select id="userEmailLogin" parameterType="User" resultMap="UserInfoResult">
+		SELECT * FROM  sun_user WHERE userEmail = '${userName}' and userPassword = '${userPassword}'
+	</select>
+	<!--通过手机号码查找-->
+	<select id="findPasswordUser" parameterType="User" resultMap="UserInfoResult">
+		SELECT * FROM  sun_user WHERE userPhone = '${userPhone}'
+	</select>
+	<!--修改密码-->
+	<update id="updatePasswordUser" parameterType="User">
+		UPDATE sun_user SET userPassword = '${userPassword}' WHERE userId = '${userId}'
+	</update>
+	<!--修改密码最后一步-->
+	<update id="updateOverPasswordUser" parameterType="User">
+		UPDATE sun_user SET userPassword = '${userPassword}' WHERE userPhone = '${userPhone}'
+	</update>
+	<!--修改手机号码-->
+	<update id="alterPhone" parameterType="User">
+		UPDATE sun_user SET userPhone = '${userPhone}' WHERE userId = '${userId}'
+	</update>
+	<update id="alterPayPass" parameterType="User">
+		UPDATE sun_user SET userPayPass = '${userPayPass}' WHERE userId = '${userId}'
+	</update>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	private int parent_id;
+    private int category_id;
+    private String name;
+
+ -->
+<mapper namespace="com.lanou.dao.GoodsTypeDao">
+	<resultMap id="GoodsTypeInfoResult" type="GoodsType">
+		<id column="category_id" property="category_id" javaType="int"></id>
+		<result column="parent_id" property="parent_id" javaType="int"/>
+		<result column="name" property="name" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="findGoodsType" resultMap="GoodsTypeInfoResult">
+		SELECT * FROM sun_category
+	</select>
+	<!--首先查询出来自身id 和 所在位置-->
+	<select id="findTypeById" parameterType="int" resultMap="GoodsTypeInfoResult">
+		SELECT * FROM sun_category
+		<where>
+			<if test="#{0}!=null">
+				and category_id = #{0}
+			</if>
+		</where>
+	</select>
+	<!--根据自身查出上级目录或者下级目录-->
+	<select id="findTypeById02" parameterType="int" resultMap="GoodsTypeInfoResult">
+		SELECT * FROM sun_category
+		<where>
+			parent_id = #{0}
+		</where>
+	</select>
+</mapper>

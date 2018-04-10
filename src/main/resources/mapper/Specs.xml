@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	private int specsId;
+    private int categoryId;
+    private String specsBrand;
+    private int parentId;
+    private String sunId;
+    private float max;
+    private float min;
+    private String material;
+    private String bind;
+    private String color;
+    private String type;
+ -->
+<mapper namespace="com.lanou.dao.SpecsDao">
+	<resultMap id="SpecsInfoResult" type="Specs">
+		<id column="specsId" property="specsId" javaType="int"/>
+		<result column="categoryid" property="categoryId" javaType="int"/>
+		<result column="specsBrand" property="specsBrand" jdbcType="VARCHAR"/>
+		<result column="parentId" property="parentId" javaType="int"/>
+		<result column="sunId" property="sunId" javaType="int" />
+		<result column="max" property="max" javaType="float" />
+		<result column="min" property="min" javaType="float" />
+		<result column="material" property="material" jdbcType="VARCHAR" />
+		<result column="application" property="application" jdbcType="VARCHAR" />
+		<result column="bind" property="bind" jdbcType="VARCHAR" />
+		<result column="color" property="color" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+	</resultMap>
+	<parameterMap id="contents" type="java.util.Map">
+		<parameter property="categoryId" javaType="int"/>
+		<parameter property="parentId" javaType="int" />
+		<parameter property="sunId" javaType="int" />
+	</parameterMap>
+	<select id="findSpecsByContent" parameterMap="contents" resultMap="SpecsInfoResult">
+		SELECT * FROM sun_specs
+		<where>
+			<if test="categoryId!=null">
+				and categoryid = #{categoryId}
+			</if>
+			<if test="parentId!=null">
+				and parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sunId = #{sunId}
+			</if>
+		</where>
+	</select>
+</mapper>

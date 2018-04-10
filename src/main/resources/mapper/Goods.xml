@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ 	private int goodsId;
+    private String goodsTitle;
+    private String price;
+    private String goodsFirstPic,isHot;
+
+ -->
+<mapper namespace="com.lanou.dao.GoodsDao">
+	<resultMap id="goodsInfoResult" type="Goods">
+		<id column="goodsId" property="goodsId" javaType="int" />
+		<result column="goodsTitle" property="goodsTitle" jdbcType="VARCHAR"/>
+		<result column="price" property="price" jdbcType="VARCHAR"/>
+		<result column="goodsFirstPicture" property="goodsFirstPic" jdbcType="VARCHAR" />
+		<result column="isHot" property="isHot" jdbcType="VARCHAR" />
+		<result column="category_goods" property="category" jdbcType="VARCHAR" />
+	</resultMap>
+	<select parameterType="String" id="globalSearch" resultMap="goodsInfoResult">
+		<bind name="keyWord" value="'%'+_parameter+'%'"/>
+		SELECT * FROM sun_goods WHERE goodsTitle LIKE #{keyWord}
+	</select>
+	<!--查询一共多少页码-->
+	<parameterMap id="search" type="java.util.Map">
+		<parameter property="dim" javaType="String"/>
+		<parameter property=""/>
+	</parameterMap>
+	<select id="findGoodsPage" parameterMap="search" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM sun_goods
+		<where>
+			<if test="#{dim}!=null">
+				<bind name="keyWord" value="'%'+dim+'%'"/>
+				goodsTitle LIKE #{keyWord}
+			</if>
+		</where>
+	</select>
+
+	<!--根据分类查询商品-->
+	<parameterMap id="itemize" type="java.util.Map">
+		<parameter property="sun_id" javaType="String"/>
+		<parameter property="parent_id" javaType="String"/>
+		<parameter property="category_goods" javaType="String"/>
+		<parameter property="begin" javaType="int" />
+	</parameterMap>
+	<select id="findGoodsByItemize" parameterMap="itemize" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM sun_goods
+		<where>
+			<if test="sun_id!=null">
+				and sun_id=#{sun_id}
+			</if>
+			<if test="parent_id!=null">
+				and parent_id=#{parent_id}
+			</if>
+			<if test="category_goods!=null">
+				and category_goods=#{category_goods}
+			</if>
+		</where>
+	</select>
+	<!--展示第多少页的商品-->
+	<select id="findGoodsByPage" parameterMap="itemize" resultMap="goodsInfoResult">
+		SELECT * FROM sun_goods
+		<where>
+			<if test="sun_id!=null">
+				and sun_id=#{sun_id}
+			</if>
+			<if test="parent_id!=null">
+				and parent_id=#{parent_id}
+			</if>
+			<if test="category_goods!=null">
+				and category_goods=#{category_goods}
+			</if>
+		</where>
+			limit #{begin},50
+	</select>
+
+	<!--根据搜索框模糊查询-->
+	<parameterMap id="dim" type="java.util.Map">
+		<parameter property="dim" javaType="String"/>
+		<parameter property="page" javaType="int" />
+	</parameterMap>
+	<select id="findDimByGoods" parameterMap="dim" resultMap="goodsInfoResult">
+		<bind name="keyWord" value="'%'+dim+'%'" />
+		SELECT * FROM sun_goods WHERE goodsTitle LIKE #{keyWord} limit #{page},50
+	</select>
+
+
+	<select id="findGoodsByCategory" parameterType="int" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM sun_goods WHERE category_goods = #{0}
+	</select>
+	<parameterMap id="page" type="java.util.Map">
+		<parameter property="page" javaType="int"/>
+		<parameter property="category" javaType="int"/>
+	</parameterMap>
+	<!--根据多少页查询商品-->
+	<select id="findGoodsById" parameterMap="page" resultMap="goodsInfoResult">
+		SELECT * FROM sun_goods WHERE category_goods = #{category} limit #{page},50
+	</select>
+	<parameterMap id="contents" type="java.util.Map">
+		<parameter property="categoryId" javaType="int"/>
+		<parameter property="parentId" javaType="int" />
+		<parameter property="sunId" javaType="int" />
+		<parameter property="specsBrand" jdbcType="VARCHAR" />
+		<parameter property="page" javaType="int" />
+		<parameter property="max" javaType="float" />
+		<parameter property="min" javaType="float" />
+	</parameterMap>
+	<select id="findGoodsByContent" parameterMap="contents" resultMap="goodsInfoResult">
+		SELECT * FROM sun_goods
+		<where>
+			<if test="categoryId!=null">
+				and sun_goods.categoryid = #{categoryId}
+			</if>
+			<if test="parentId!=null">
+				and sun_goods.parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sun_goods.sunId = #{sunId}
+			</if>
+			<if test="max!=null">
+				and <![CDATA[sun_goods.price < #{max}]]>
+			</if>
+			<if test="min!=null">
+				and <![CDATA[sun_goods.price > #{min}]]>
+			</if>
+			<if test="specsBrand!=null">
+				and sun_goods.specs_brank =(
+				SELECT sun_specs.specsId FROM sun_specs
+				<where>
+					sun_specs.specsBrand = #{specsBrand}
+					<if test="categoryId!=null">
+						and sun_goods.categoryid = #{categoryId}
+					</if>
+					<if test="parentId!=null">
+						and sun_goods.parentId = #{parentId}
+					</if>
+					<if test="sunId!=null">
+						and sun_goods.sunId = #{sunId}
+					</if>
+				</where>
+				)
+			</if>
+		</where>
+		limit #{page},50
+	</select>
+	<select id="findGoodsByContentPage" parameterMap="contents" resultType="int">
+		SELECT COUNT(*) FROM sun_goods
+		<where>
+			<if test="categoryId!=null">
+				and categoryid = #{categoryId}
+			</if>
+			<if test="parentId!=null">
+				and parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sunId = #{sunId}
+			</if>
+		</where>
+	</select>
+
+	<!--首页推荐八个商品展示-->
+	<select id="findGoodsByRecommend"  resultMap="goodsInfoResult" >
+		<![CDATA[select * from sun_goods
+		   WHERE
+		   goodsId < (select max(goodsId) from sun_goods) and goodsId > (select (max(goodsId)-9) from sun_goods)]]>
+	</select>
+</mapper>
