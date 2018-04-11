@@ -37,6 +37,9 @@ public interface GoodsDao {
     // 首页推荐八个商品
     public List<Goods> findGoodsByRecommend();
 
+
+
+
     // 商品详情页数据查询
     public Goods findgoodsdDetails(int goodsId);
 
@@ -44,10 +47,19 @@ public interface GoodsDao {
     public List<goods_img> findgoodsImg(int goodsId);
 
     // 商品规格
-    public List<Goods_type> findgoodsType(int goodsId);
+    public List<String> findgoodsType(int goodsId);
+
+    // 商品规格
+    public List<Map<String, String>> selectgoodsType(int goodsId);
+
+    public Map<String, List<Map<String, String>>> selectgoodsSpec(int goodsId);
+
+    public List<String> selectSpecTitle(int goodsId);
+    public List<Integer> selectSpecId(int goodsId);
+    public List<Map<String, String>> selectValue(int goodsId);
 
     // 切换图片请求
-    public List<goods_img> findgoodsCutImg(Goods_type goods_type);
+    public List<goods_img> findgoodsCutImg(int typeNumber);
     // 获取不同颜色的图片编号
     public int findgoodsTypeNumber(Goods_type goods_type);
 }

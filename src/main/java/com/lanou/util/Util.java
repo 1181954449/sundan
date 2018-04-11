@@ -1,6 +1,7 @@
 package com.lanou.util;
 
 import com.alibaba.fastjson.JSON;
+import com.lanou.entity.Goods;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2012 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.AddressDao">
+
+    <resultMap type="Address" id="AddressReslut">
+        <id column="addressId" property="addressId"/>
+        <result column="userId" property="userId"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="county" property="county"/>
+        <result column="detAddress" property="detAddress"/>
+        <result column="zipCode" property="zipCode"/>
+        <result column="isDefault" property="isDefault"/>
+        <result column="consName" property="consName"/>
+        <result column="consPhone" property="consPhone"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        addressId, userId, consName, detAddress, consPhone, province, zipCode,
+        city, county, isDefault
+    </sql>
+
+    <!--添加收货地址-->
+    <insert id="addAddress" parameterType="Address">
+        INSERT INTO sun_recaddress
+        (userId, consName, province, city, county, detAddress, zipCode, isDefault, consPhone)
+        values
+        (#{userId}, #{province}, #{city}, #{county}, #{detAddress}, #{zipCode}, #{isDefault}, #{consPhone}, #{consName})
+    </insert>
+    <!--修改收货地址-->
+    <update id="updateAddress" parameterType="Address">
+        update sun_recaddress
+        <set>
+            <if test="userId != 0">
+                userId = #{userId},
+            </if>
+            <if test="consName != null">
+                consName = #{consName},
+            </if>
+            <if test="consPhone != null">
+                consPhone = #{consPhone},
+            </if>
+            <if test="province != null">
+                province = #{province},
+            </if>
+            <if test="city != null">
+                city = #{city},
+            </if>
+            <if test="county != null">
+                county = #{county},
+            </if>
+            <if test="zipCode != 0">
+                zipCode = #{zipCode},
+            </if>
+            <if test="isDefault != null">
+                isDefault = #{isDefault},
+            </if>
+        </set>
+
+        <where>
+           addressId = #{addressId}
+        </where>
+    </update>
+    <!--添加部分信息-->
+    <insert id="insertSelective" parameterType="Address">
+        insert into sun_recaddress
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="addressId != 0">
+                addressId,
+            </if>
+            <if test="userId != 0">
+                userId,
+            </if>
+            <if test="consName != null">
+                consName,
+            </if>
+            <if test="detAddress != null">
+                detAddress,
+            </if>
+            <if test="consPhone != null">
+                consPhone,
+            </if>
+            <if test="province != null">
+                province,
+            </if>
+            <if test="zipCode!= 0">
+                zipCode,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="county != null">
+                county,
+            </if>
+            <if test="isDefault  != null">
+                isDefault,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="userId != 0">
+                #{userId},
+            </if>
+            <if test="consName != null">
+                #{consName},
+            </if>
+            <if test="province != null">
+                #{province},
+            </if>
+            <if test="consPhone != null">
+                #{consPhone},
+            </if>
+            <if test="city != null">
+                #{city},
+            </if>
+            <if test="zipCode != 0">
+                #{zipCode},
+            </if>
+            <if test="county != null">
+                #{county},
+            </if>
+            <if test="detAddress != null">
+                #{detAddress},
+            </if>
+            <if test="isDefault != null">
+                #{isDefault},
+            </if>
+        </trim>
+    </insert>
+
+
+
+
+
+    <!--查询地址-->
+    <select id="lookAddress" resultMap="AddressReslut" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from sun_recaddress
+        WHERE
+        userId = #{0}
+    </select>
+    <!--查询默认地址-->
+    <select id="selectDefaultAddress" resultMap="AddressReslut">
+        select
+        <include refid="Base_Column_List"/>
+        from sun_recaddress
+        where
+        isDefault = 1
+    </select>
+
+    <!--删除地址-->
+    <delete id="deleteAddress" parameterType="int">
+        delete from sun_recaddress
+        where addressId = #{addressId}
+    </delete>
+    
+    <select id="findDefultaddressId" resultType="int">
+        SELECT
+        addressId
+        FROM
+        sun_recaddress
+        WHERE
+        isDefault = 1
+    </select>
+</mapper>

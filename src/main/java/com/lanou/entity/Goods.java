@@ -1,6 +1,7 @@
 package com.lanou.entity;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lanou on 2018/4/8.
@@ -19,8 +20,11 @@ public class Goods {
     private String goodsFirstPic,isHot;
     private int category;
     private String goods_attrbute;
+    private int goodsNumber;
     private List<goods_img> goods_imgs;
     private List<Goods_type> goods_types;
+    private List<Map<String, String>> typeList;
+    private Map<String, List<Map<String, String>>> specList;
 
 
     public int getCategory() {
@@ -95,8 +99,28 @@ public class Goods {
         this.goods_attrbute = goods_attrbute;
     }
 
+    public List<Map<String, String>> getTypeList() {return typeList;}
+
+    public int getGoodsNumber() {return goodsNumber;}
+
+    public void setGoodsNumber(int goodsNumber) {
+        this.goodsNumber = goodsNumber;
+    }
+
+    public void setTypeList(List<Map<String, String>> typeList) {
+        this.typeList = typeList;
+    }
+
     public Goods() {
         super();
+    }
+
+    public Map<String, List<Map<String, String>>> getSpecList() {
+        return specList;
+    }
+
+    public void setSpecList(Map<String, List<Map<String, String>>> specList) {
+        this.specList = specList;
     }
 
     @Override
@@ -111,6 +135,7 @@ public class Goods {
                 ", goods_attrbute='" + goods_attrbute + '\'' +
                 ", goods_imgs=" + goods_imgs +
                 ", goods_types=" + goods_types +
+                ", typeList=" + typeList +
                 '}';
     }
 }

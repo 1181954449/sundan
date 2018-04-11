@@ -18,6 +18,7 @@
 		<result column="isHot" property="isHot" jdbcType="VARCHAR" />
 		<result column="category_goods" property="category" jdbcType="VARCHAR" />
 		<result column="goods_attrbute" property="goods_attrbute" />
+		<result column="goodsNumber" property="goodsNumber"/>
 	</resultMap>
 
 
@@ -194,7 +195,7 @@
 		<result column="goods_type_number" property="goods_type_number"/>
 	</resultMap>
 	<sql id="findGoodsDetails">
-		goodsId,goodsTitle,price,goods_attrbute
+		goodsId,goodsTitle,price,goods_attrbute,goodsNumber
 	</sql>
 	<select id="findgoodsdDetails" resultMap="goodsInfoResult" parameterType="int">
 		SELECT 
@@ -223,9 +224,9 @@
 	<sql id="findGoodType">
 		goodskey, goodsvalue, goods_id, goods_typeId
 	</sql>
-	<select id="findgoodsType" resultMap="GoodsTypeResult" parameterType="int">
+	<select id="findgoodsType" parameterType="int" resultType="java.lang.String">
 		SELECT
-		<include refid="findGoodType"/>
+		goodsvalue
 		FROM
 		sun_goods_type
 		WHERE
@@ -240,6 +241,54 @@
 		WHERE
 		goodsvalue = #{goodsvalue}
 		and
-		good_id = #{good_id}
+		goods_id = #{goods_id}
+	</select>
+	<select id="findgoodsCutImg" resultMap="GoodsImgResult" parameterType="int">
+		SELECT
+		<include refid="findGoodsImg"/>
+		FROM
+		sun_goods_img
+		WHERE
+		goods_type_number = #{0}
+	</select>
+
+
+	<select id="selectgoodsType" parameterType="int" resultType="java.util.Map">
+		SELECT
+		goodsvalue, goodskey
+		FROM
+		sun_goods_type
+		WHERE
+		goods_id = #{0}
+		and
+		goods_type_number LIKE '_0__'
+	</select>
+	<select id="selectSpecTitle" parameterType="int" resultType="String">
+		SELECT
+		goodskey
+		FROM
+		sun_goods_type
+		WHERE
+		goods_id = #{0}
+		and
+		goods_type_number LIKE '_1__'
+	</select>
+	<select id="selectSpecId" parameterType="int" resultType="int">
+		SELECT
+		goods_typeId
+		FROM
+		sun_goods_type
+		WHERE
+		goods_id = #{0}
+		and
+		goods_type_number LIKE '_1__'
+	</select>
+	<select id="selectValue" parameterType="int" resultType="java.util.Map">
+		SELECT
+		goodsvalue, goodskey
+		FROM
+		sun_goods_type
+		WHERE
+		goods_type_number = #{0}
 	</select>
 </mapper>
