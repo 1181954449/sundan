@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2012 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lanou.dao.ShoppingCarDao">
+    <!--    private int shoppingCarId;
+    private int userId,goodsId;
+    private int number;
+    private List<Goods> goodsList;
+
+        private int goodsId;
+    private String goodsTitle;
+    private String price;
+    private String goodsFirstPic-->
+    <resultMap type="ShoppingCar" id="ShoppingCarResult">
+        <id column="shoppingCarId" property="shoppingCarId"/>
+        <result column="userId" property="userId"/>
+        <result column="goodsId" property="goodsId"/>
+        <result column="number" property="number"/>
+        <collection property="goodsList" ofType="Goods">
+            <id column="goodsId" property="goodsId"/>
+            <result column="goodsTitle" property="goodsTitle"/>
+            <result column="price" property="price"/>
+            <result column="goodsFirstPicture" property="goodsFirstPic"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="GoodsInfoResult" type="Goods">
+        <id column="goodsId" property="goodsId"/>
+        <result column="goodsTitle" property="goodsTitle"/>
+        <result column="price" property="price"/>
+        <result column="goodsFirstPicture" property="goodsFirstPic"/>
+    </resultMap>
+    <sql id="shoppingCarCInfo">
+        (userId, goodsId, number)
+    </sql>
+    <sql id="shoppingCarPInfo">
+        (#{userId}, #{goodsId}, #{number})
+    </sql>
+
+    <insert id="addShoppingCar" parameterType="int">
+        INSERT INTO sun_shoppingcar
+        <include refid="shoppingCarCInfo"/>
+        VALUE
+        <include refid="shoppingCarPInfo"/>
+    </insert>
+
+    <select id="findGoodsList" parameterType="int" resultMap="ShoppingCarResult">
+        SELECT
+        g.goodsId, g.goodsTitle, g.price, g.goodsFirstPicture
+        FROM sun_shoppingcar s, sun_goods g
+        WHERE s.goodsId = g.goodsId and s.userId = #{0}
+    </select>
+
+    <delete id="deleteShop" parameterType="ShoppingCar">
+        DELETE FROM sun_shoppingcar WHERE userId = #{userId} and goodsId = #{goodsId}
+    </delete>
+</mapper>

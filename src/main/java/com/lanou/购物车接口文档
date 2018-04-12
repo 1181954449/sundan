@@ -1,0 +1,76 @@
+
+
+添加购物车接口
+地址: Http://10.80.13.49:8091/shop/add
+请求方式: get
+参数说明:
+参数名	    是否必须	    说明
+goodsId	    是		    商品id
+返回说明:
+示例:
+{
+　　"data":[
+　　　　{
+　　　　　　"goodsId":2,
+　　　　　　"goodsList":[
+　　　　　　　　{
+　　　　　　　　　　"category":0,
+　　　　　　　　　　"goodsFirstPic":"https://www.sundan.com/public/images/4b/92/ee/3ccb32e0f99d4b6c2cd7dd43234c5f63dcd6b441.jpg?1522229384#h",
+　　　　　　　　　　"goodsId":2,
+　　　　　　　　　　"goodsNumber":0,
+　　　　　　　　　　"goodsTitle":"銆愯閲戙€戝崕涓猴紙HUAWEI锛塒20 AI鏅烘収鍏ㄩ潰灞忓叏缃戦€氱増 绉诲姩鑱旈€氱數淇�4G鎵嬫満 鍙屽崱鍙屽緟",
+　　　　　　　　　　"price":"1111"
+　　　　　　　　},
+　　　　　　　　{
+　　　　　　　　　　"category":0,
+　　　　　　　　　　"goodsFirstPic":"https://www.sundan.com/public/images/49/d9/61/a60e3d42b0178f038a666bc998de12975552c3e7.jpg?1522666213#h",
+　　　　　　　　　　"goodsId":4,
+　　　　　　　　　　"goodsNumber":0,
+　　　　　　　　　　"goodsTitle":"OPPO R15 姊﹂暅鐗� 6GB+128GB 鍏ㄧ綉閫� 鍏ㄩ潰灞忓弻鎽勬媿鐓уū涔愭墜鏈� 鍙屽崱鍙屽緟",
+　　　　　　　　　　"price":"3299"
+　　　　　　　　},
+　　　　　　　　{
+　　　　　　　　　　"category":0,
+　　　　　　　　　　"goodsFirstPic":"https://www.sundan.com/public/images/db/74/78/fae4e2b1cbae6f9d152520f809c3b837072673dc.jpg?1513761486#h",
+　　　　　　　　　　"goodsId":3,
+　　　　　　　　　　"goodsNumber":0,
+　　　　　　　　　　"goodsTitle":"Apple iPhoneX 绉诲姩鑱旈€氱數淇�4G鍏ㄧ綉閫氭墜鏈� 閾惰壊 256GB",
+　　　　　　　　　　"price":"2311"
+　　　　　　　　}
+　　　　　　],
+　　　　　　"number":0,
+　　　　　　"shoppingCarId":0,
+　　　　　　"userId":0
+　　　　}
+　　],
+　　"errCode":1,
+　　"msg":"璐墿杞︽坊鍔犳垚鍔�"
+}
+
+参数说明
+参数名		    说明
+goodsId         商品Id
+goodsTitle      商品标题
+price           价格
+
+
+
+
+
+删除购物车接口
+地址: Http://10.80.13.49:8091/shop/delete
+请求方式: get
+参数说明:
+参数名	    是否必须	    说明
+goodsId	    是		    把那个商品的商品id传过来
+goodsvalue  是          点击的那个颜色的值
+返回说明:
+示例:
+{
+　　"errorCode":1,
+　　"msg":"鍒犻櫎鎴愬姛"
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息

@@ -58,6 +58,10 @@ public interface GoodsDao {
     public List<Integer> selectSpecId(int goodsId);
     public List<Map<String, String>> selectValue(int goodsId);
 
+    // 查询此类商品的Id
+    public int goodsProperty(int goodsId);
+    // 同类商品推荐
+    public List<Goods> goodsList(int propertyId);
     // 切换图片请求
     public List<goods_img> findgoodsCutImg(int typeNumber);
     // 获取不同颜色的图片编号

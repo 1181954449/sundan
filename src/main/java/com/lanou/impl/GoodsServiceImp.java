@@ -103,10 +103,13 @@ public class GoodsServiceImp implements GoodsService{
         }
         System.out.println(list);
 
+        List<Goods> kindGoods = findKindGoods(goodsId);
 
+        // 塞值
         goods.setGoods_imgs(imgList);
         goods.setTypeList(map);
         goods.setSpecList(list);
+        goods.setGoodss(kindGoods);
         return goods;
     }
 
@@ -116,6 +119,17 @@ public class GoodsServiceImp implements GoodsService{
         System.out.print(typeNumber);
         List<goods_img> imgList = goodsDao.findgoodsCutImg(typeNumber);
         return imgList;
+    }
+
+
+
+    public List<Goods> findKindGoods(int goodsId){
+        int propertyId = goodsDao.goodsProperty(goodsId);
+        System.out.println(propertyId);
+        List<Goods> goodss = goodsDao.goodsList(propertyId);
+        System.out.println(goodss);
+        System.out.println(goodss.size());
+        return goodss;
     }
 
     public void findgoodsType(int goodsId){

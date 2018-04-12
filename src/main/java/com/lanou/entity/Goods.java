@@ -25,7 +25,7 @@ public class Goods {
     private List<Goods_type> goods_types;
     private List<Map<String, String>> typeList;
     private Map<String, List<Map<String, String>>> specList;
-
+    private List<Goods> goodss;
 
     public int getCategory() {
         return category;
@@ -121,6 +121,14 @@ public class Goods {
 
     public void setSpecList(Map<String, List<Map<String, String>>> specList) {
         this.specList = specList;
+    }
+
+    public List<Goods> getGoodss() {
+        return goodss;
+    }
+
+    public void setGoodss(List<Goods> goodss) {
+        this.goodss = goodss;
     }
 
     @Override

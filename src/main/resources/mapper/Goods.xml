@@ -291,4 +291,17 @@
 		WHERE
 		goods_type_number = #{0}
 	</select>
+
+	<select id="goodsProperty" parameterType="int" resultType="int">
+		SELECT
+		goods_propertyId
+		FROM
+		sun_goods
+		WHERE goodsId = #{0}
+	</select>
+
+	<select id="goodsList" parameterType="int" resultMap="goodsInfoResult">
+		select goodsId, goodsTitle, price, goodsFirstPicture from sun_goods WHERE goods_propertyId = #{0};
+	</select>
+
 </mapper>

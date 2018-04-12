@@ -65,4 +65,11 @@ public class GoodsTest {
         goodsService.findgoodsType(2);
     }
 
+    @Test
+    public void test06(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsServiceImp goodsService = (GoodsServiceImp) applicationContext.getBean("goodsService");
+        goodsService.findKindGoods(2);
+    }
+
 }
