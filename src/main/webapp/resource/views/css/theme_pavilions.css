@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	width: 1240px;
+	padding-top:25px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#con {
+	width:600px;
+	height:300px;
+	margin:15px 10px;
+	float: left;
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.8);
+	-moz-box-shadow:0 0 15px rgba(0,0,0,0.8);
+	box-shadow:0 0 15px rgba(0,0,0,0.8);
+	overflow: hidden;
+}
+#con img{
+	width:600px;
+	height:300px;
+}
+#con img:hover{
+	transform: scale(1.1,1.1);
+	overflow: hidden;
+}
+
+

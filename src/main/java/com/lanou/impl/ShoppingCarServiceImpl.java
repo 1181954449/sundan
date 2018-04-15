@@ -33,9 +33,22 @@ public class ShoppingCarServiceImpl implements  ShoppingCarService{
 
     @Override
     public List<Goods> add(ShoppingCar shoppingCar) {
-        int count = shoppingCarDao.addShoppingCar(shoppingCar);
-        List<Goods> goodsList = shoppingCarDao.findGoodsList(shoppingCar.getUserId());
-        return goodsList;
+        ShoppingCar car = shoppingCarDao.findShoppingCar(shoppingCar);
+
+
+
+        if(car == null){
+            int count = shoppingCarDao.addShoppingCar(shoppingCar);
+            List<Goods> goodsList = shoppingCarDao.findGoodsList(shoppingCar.getUserId());
+            return goodsList;
+        }else {
+            int count = shoppingCarDao.updateNumber(shoppingCar);
+            List<Goods> goodsList = shoppingCarDao.findGoodsList(shoppingCar.getUserId());
+            return goodsList;
+        }
+
+
+
     }
 
     public void lala(int userId){

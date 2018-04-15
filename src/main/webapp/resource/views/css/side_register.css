@@ -1,0 +1,87 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: "微软雅黑";
+}
+
+.wrap {
+	width: 1182px;
+	padding: 0 20px;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	margin: 0px auto;
+}
+
+.content_cy {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	/*border: 1px solid;*/
+}
+
+.content_cy p {
+	color: #666;
+	font-size: 12px;
+	line-height: 35px;
+	height: 35px;
+}
+
+.wrap_first {
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px dashed #EEEEEE;
+	margin-top: 5px;
+}
+.wrap_third,.wrap_forth,.wrap_fifth,.wrap_sixth,.wrap_seventh,.wrap_ninth,.wrap_tenth{
+	/*border-top: 1px solid #CCCCCC;*/
+	border-bottom: 1px dashed #EEEEEE;
+}
+.wrap_second {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+button {
+	border: 1px solid #ddd;
+	border-top-color: rgb(221, 221, 221);
+	border-right-color: rgb(221, 221, 221);
+	border-bottom-color: rgb(221, 221, 221);
+	border-left-color: rgb(221, 221, 221);
+	color: #666;
+	padding: 1px 12px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+	width: auto;
+	letter-spacing: 0;
+	width: 35px;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
+	height: 25px;
+	float: left;
+	background: white;
+}
+.btn_con{
+	float: right;
+}
+#btn{
+	width: 1200px;
+	/*border: 1px solid;*/
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+#btn .cur{
+	background-color: #01bad6;
+	color: white;
+}
+button:hover{
+	background-color: #01bad6;
+	color: white;
+}

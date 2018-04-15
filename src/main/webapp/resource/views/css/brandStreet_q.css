@@ -1,0 +1,103 @@
+
+.brand_container{
+	background: #f5f5f5;
+	padding: 50px 0;
+	border-bottom: 1px solid #e1e1e1;
+}
+.brand_container_wrap{
+	width: 1200px;
+	margin: 0 auto;
+	/*border: 1px solid;*/
+}
+.brand_popular_brand{
+	width: 100%;
+	height: 445px;
+	/*border: 1px solid;*/
+}
+
+.brand_popular_title{
+	font-size: 18px;
+}
+.brand_popular_brand li{
+	position: relative;
+	width: 216px;
+	float: left;
+	margin:27px 30px 0 0;
+}
+.brand_popular_intro{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 150px;
+	background: black;
+	opacity: 0.05;
+	display: none;
+}
+.brand_popular_brand li p{
+	position: absolute;
+	width: 112px;
+	top: 280px;
+	left: 50%;
+	font-size: 9px;
+	margin-left: -56px;
+	color: black;
+	display: none;
+}
+
+.brand_popular_brand li:hover .brand_popular_intro,
+.brand_popular_brand li:hover .brand_popular_article{
+	display: block;
+}
+
+/* 全部品牌 */
+.brand_all_brand{
+	width: 100%;
+	margin-top: 20px;
+}
+.brand_all_address, .brand_all_address_url{
+	width: 1076px;
+	margin-top: 20px;
+	padding: 10px 50px;
+	background: white;
+	font-size: 15px;
+	overflow: hidden;
+	/*border: 1px solid;*/
+}
+.brand_all_screening{
+	float: left;
+}
+.brand_all_letter li{
+	display: inline;
+	font-size: 14px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.brand_all_address_url_a{
+	width: 960px;
+	padding-top: 10px;
+	font-size: 16px;
+	overflow: hidden;
+	border-bottom: 1px solid #f0f0f0;
+}
+.brand_all_address_url_a h1{
+	width: 100px;
+	font-size: 45px;
+	font-weight: 400;
+	float: left;	
+}
+.brand_all_address_right{
+	width: 750px;
+	float: left;
+	padding-left: 70px;
+	overflow: hidden;
+	margin: 20px;
+}
+.brand_all_address_right li{
+	width: 50%;
+	float: left;
+}
+
+
+
+

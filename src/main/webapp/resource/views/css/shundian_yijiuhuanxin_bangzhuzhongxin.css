@@ -1,0 +1,318 @@
+
+a {
+	text-decoration: none;
+}
+.clearfix {
+	display: block;
+}
+.ydm-fr {
+    float: right;
+    font-size: 12px;
+    color: #333;
+}
+#helpbox {
+	width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 11;
+    float: none;
+}
+.search-crumb .crumb-list {
+    padding: 10px 20px;
+}
+.search-crumb {
+	height: 40px;
+}
+.search-crumb .crumb-list li {
+    float: left;
+    line-height: 20px;
+    overflow: hidden;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    color: #333;
+}
+.search-crumb .crumb-list .gt {
+    padding-top: 0px;
+    font-family: SimSun;
+}
+.ydm-hrline {
+    border: 0px;
+    border-bottom: 1px solid #dfdfdf;
+}
+/*横线下*/
+.container {
+    padding-bottom: 30px;
+    background: #ffffff;
+}
+.ydm-pt10 {
+    padding-top: 10px;
+}
+
+#help_left {
+    border: 1px solid #e5e5e5;
+    width: 160px;
+}
+#help_left {
+    float: left;
+    width: 200px;
+    border: 1px solid #e6e6e6;
+    border-left: none;
+    border-right: 0;
+    text-align: center;
+    background: #fff;
+}
+#help_left h3 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "宋体";
+    color: #333;
+    line-height: 48px;
+    height: 48px;
+    border: 1px solid #e6e6e6;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    text-align: left;
+    text-indent: 30px;
+    display: none;
+}
+#help_left h3.last+ul {
+    border-bottom: 1px solid #e6e6e6;
+}
+#help_left h3.active+ul {
+    display: block;
+}
+#help_left h3+ul {
+    display: none;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+#help_left .help_nav h4 {
+    font-size: 12px;
+    font-family: "宋体";
+    color: #000;
+    line-height: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: left;
+    text-indent: 30px;
+}
+#help_left .help_nav h4 a {
+    font-size: 12px;
+    font-family: "宋体";
+    color: #000;
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+/*控制列表收回*/
+#help_left .help_nav .help_nav_li .help_subnav {
+    display: none;
+}
+
+
+#help_left .help_nav .help_subnav li.sidesubnav_first {
+    border-top: 0;
+}
+#help_left .help_nav .help_subnav li {
+    text-align: left;
+    text-indent: 20px;
+    width: 136px;
+    margin: 0 auto;
+}
+#help_left ul, #help_left li {
+    display: block;
+}
+#help_left .help_nav .help_subnav li a {
+    display: block;
+    font-size: 12px;
+    font-family: "宋体";
+    color: #999;
+    line-height: 44px;
+    height: 44px;
+    width: 100%;
+}
+#help_left .help_nav .help_subnav li.sidesubnav_first {
+    border-top: 0;
+}
+#help_left .help_nav .help_subnav li {
+    text-align: left;
+    text-indent: 20px;
+    width: 136px;
+    margin: 0 auto;
+}
+#help_left ul, #help_left li {
+    display: block;
+}
+#help_left .help_nav .help_subnav li+li {
+    border-top: 1px dashed #e5e5e5;
+}
+#help_left .help_nav .help_subnav li {
+    text-align: left;
+    text-indent: 20px;
+    width: 136px;
+    margin: 0 auto;
+}
+#help_left ul, #help_left li {
+    display: block;
+}
+#help_left .help_nav .help_subnav li a {
+    display: block;
+    font-size: 12px;
+    font-family: "宋体";
+    color: #999;
+    line-height: 44px;
+    height: 44px;
+    width: 100%;
+}
+#help_left .help_nav .help_subnav li+li {
+    border-top: 1px dashed #e5e5e5;
+}
+#help_left .help_nav .help_subnav li {
+    text-align: left;
+    text-indent: 20px;
+    width: 136px;
+    margin: 0 auto;
+}
+#help_left .help_nav .help_subnav li+li {
+    border-top: 1px dashed #e5e5e5;
+}
+#help_left .help_nav .help_subnav li {
+    text-align: left;
+    text-indent: 20px;
+    width: 136px;
+    margin: 0 auto;
+}
+#help_left .help_nav .help_nav_li+.help_nav_li {
+    border-top: 1px solid #e5e5e5;
+}
+#help_left #help_contact {
+    display: block;
+    cursor: default;
+    margin-top: 15px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 0;
+}
+#help_left h3.active+ul+h3 {
+    border-top: 1px solid #e6e6e6;
+}
+#help_left h3+ul+h3 {
+    border-top: 0;
+}
+#help_left h3 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "宋体";
+    color: #333;
+    line-height: 48px;
+    height: 48px;
+    border: 1px solid #e6e6e6;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    text-align: left;
+    text-indent: 30px;
+    display: none;
+}
+#help_left h3.active+ul {
+    display: block;
+}
+#help_left h3+ul {
+    display: none;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+#help_left #help_contact_nav li {
+    color: #000;
+    font-size: 12px;
+    line-height: 24px;
+    font-family: "宋体";
+    padding: 0 0 15px 29px;
+    text-align: left;
+}
+#help_left ul, #help_left li {
+    display: block;
+}
+/*右半部分*/
+#help_main {
+    padding: 10px 20px 0 20px;
+    margin-left: 220px;
+    border: 1px solid #e6e6e6;
+}
+.main_section {
+    padding-bottom: 30px;
+    display: none;
+}
+#h2 {
+    font-family: "宋体";
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+.qa_dl {
+    padding: 0 20px;
+}
+.qa_dl dt {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+}
+.qa_dl dd {
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 20px;
+}
+#dd img {
+    vertical-align: middle;
+}
+.active {
+	display: none;
+}
+#filter_tabs {
+    width: 100%;
+    border: solid 1px #DFDFDF;
+    background-color: #F9F9F9;
+    margin: -1px 0 0 -1px;
+    height: 46px;
+}
+#filter_tabs li {
+    font-size: 16px;
+    padding: 0 35px;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    border-right: solid 1px #DFDFDF;
+    cursor: pointer;
+}
+/*添加类名控制样式*/
+#filter_tabs li.li_selected {
+    background-color: #FFF;
+    color: #F00;
+}
+.subways dl {
+    margin-bottom: 20px;
+    font-size: 0;
+}
+.subways dl dt {
+    line-height: 25px;
+    font-size: 12px;
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+.subways dl dd {
+    color: #999;
+    line-height: 25px;
+    font-size: 12px;
+    width: 10%;
+    display: inline-block;
+}
+.active {
+	display: block;
+}

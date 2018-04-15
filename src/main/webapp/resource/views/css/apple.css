@@ -1,0 +1,208 @@
+*{
+	margin: 0;
+	padding:0;
+}
+/*导航部分*/
+.wrap {
+	width: 1318px;
+	margin: 0 auto;
+	/*border: 1px solid;*/
+	font: 12px/1 Microsoft YaHei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+a {
+	text-decoration: none;
+}
+#appleHead {
+	/*overflow: hidden;*/
+}
+#appleHead div {
+	float: left;
+	text-decoration: none;
+}
+#appleHead a {
+	display: inline-block;
+	padding-top: 40px;
+	padding-bottom: 43px;
+	font-size: 18px;
+	color: black;
+}
+#appleHead a:hover {
+	color: #00bbd4;
+}
+##appleHeadNav {
+	margin-right: 75px;
+	margin-left: 30px;
+}
+#appleHead a:nth-child(2) {
+	margin-right: 66px;
+}
+#appleHead a:nth-child(3) {
+	margin-right: 71px;
+}
+#appleHead a:nth-child(4) {
+	margin-right: 82px;
+}
+#appleHead a:nth-child(5) {
+	margin-right: 92px;
+}
+
+#appleHead a:nth-child(6) {
+	margin-right: 81px;
+}
+#appleHead a:nth-child(7) {
+	margin-right: 93px;
+}
+#appleLogo {
+	padding-top: 27px;
+}
+#appleDisplay {
+	overflow: hidden;
+}
+#firstSection,
+#secondSection,
+#thirdSection,
+#forthSection {
+	float: left;
+}
+/*轮播部分*/
+#appleCarouselFigure {
+	overflow: hidden;
+	position: relative;
+	width: 1318px;
+	height: 500px;
+}
+#appleCarouselFigureContent {
+	width: 600%;
+	height: 100%;
+	position:absolute;
+	left: 0;
+	top: 0;
+}
+#appleCarouselFigureContent img {
+	float: left;
+	width: 1318px;
+	height: 500px;
+}
+#applePagination {
+	position: absolute;
+	bottom: 10px;
+	left: 644px;
+}
+#applePagination span {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 100%;
+	background: #bab9b9;
+}
+#applePagination span:hover{
+	background: #00bbd4;
+	cursor: pointer;
+}
+/*展示区*/
+#appleDisplay p{
+	font-size: 24px;
+	text-align: center;
+	margin-top: 32px;
+	margin-bottom: 27px;
+}
+#appleDisplay img{
+	text-align: center;
+	/*border: 1px solid;*/
+	margin-left: 22px;
+	width:90%;
+}
+#firstSection{
+	/*border: 1px solid;*/
+	width: 314px;
+	height: 545px;
+	background: #f0f0f0;
+	font-size:16px ;
+}
+#appleDisplay{
+	margin-top: 35px;
+}
+#firstSection{
+	margin-right: 20px;
+}
+#firstSection div{
+	margin-left: 95px;
+	margin-top: 10px;
+}
+#firstSection span{
+	display: inline-block;
+	color: #8a8a8a;
+}
+#firstSection span:hover{
+	color: #00bbd4;
+}
+#firstSection .first_line{
+	margin-top: 32px;
+}
+.apple_item{
+	background-image: url(../img/apple/apple_arrow.png) ;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	margin-right: 8px;
+}
+#firstSection:last-child{
+	margin-right: 0;
+}
+/*尾部*/
+footer{
+	overflow: hidden;
+}
+footer a {
+	float: left;
+	width: 607px;
+	height: 176px;
+	border: 1px solid #c8c8c8;
+	margin-top: 40px;
+	margin-left:100px;
+}
+footer img {
+	width: 284px;
+	height: 110px;
+}
+#miniDisplay{
+	overflow: hidden;
+	 color: #3f3f3f;
+}
+footer a:first-child{
+	margin-left:0;
+}
+#miniDisplay:first-child{
+	margin-left: 0;
+	
+}
+#miniDisplay img{
+	margin-top: 40px;
+}
+#miniDisplay div{
+	float: left;
+	/*display: block;*/
+}
+#secondPlace{
+	margin-top: 38px;
+	font-size: 14px;
+}
+#secondPlace .intro{
+	padding: 15px 13px 0 0;
+    /*line-height: 18px;*/
+    color: #3f3f3f;
+}
+#secondPlace .introduce{
+	padding: 15px 13px 0 0;
+    /*line-height: 18px;*/
+    color: #3f3f3f;
+}
+#secondPlace .more{
+	padding: 30px 15px 0 0;
+	font-size: 16px;
+	color: #9f9f9f;
+}
+#secondPlace .second_Place{
+	font-size: 16px;
+	color: black;
+}

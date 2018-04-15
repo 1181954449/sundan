@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/shundian_faxian_sheying_lunbo5.css"/>
+	</head>
+	<body>
+		<div class="top1"></div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="swiper-container slider">
+			<div class="swiper-wrapper center">
+				<div class="slider_con swiper-slide">
+					<img src="../img/img1.jpg" alt="">
+					<div class="txtbox">
+						<h1>成长，旧照片中的过往</h1>
+						<p>总是对一些特定的事物尚存着模糊的记忆，无关于刻意与否，依稀记得那年尚幼，蹒跚学步，背靠墙身半蹲，是渴望的也是抗拒的，她与他期望、担忧，但却换不来我向前那决绝的一步……&nbsp; 如今早已学会了站立、行走、奔跑，却还是有些无力，迈不开步子，我不知为何……
+						</p>
+					</div>
+				</div>
+				<div class="slider_con swiper-slide">
+					<img src="../img/img5.jpg" alt="">
+					<div class="txtbox">
+						<h1>相遇，光影中的甜蜜爱恋</h1>
+						<p>可能相逢之初觉得姑娘美丽大方温婉可爱善解人意，少年阳光开朗健康向上幽默绅士，一瞧就觉得情愫暗生，于是少年殷勤追求，姑娘矜持回绝。月隐星沉，蝉鸣雨落。想着想着就傻笑起来，人生顿时五颜六色，充满美好。&nbsp;可能是一杯奶茶的解渴，可能是一件外衣的温暖，也可能是一封情书...</p>
+					</div>
+				</div>
+				<div class="slider_con swiper-slide">
+					<img src="../img/img6.jpg" alt="">
+					<div class="txtbox">
+						<h1>足迹，人生不再错过风景</h1>
+						<p>生活总是在重复，而我，似乎总在错过什么。车站，广场，古城的角落里，穿梭而过的人们，匆忙的脚步…… 偶然的驻足，不经意的远望，阳光的芬芳，古城的厚重，突然才发现，美从来都在身边，只是我们太匆忙，未曾放慢脚步。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination slider_circle"></div>
+			
+		</div>
+		
+		<a href="###" target="_blank">
+			<div class="camera1">
+				<div class="canon">
+					<div class="item_name1">
+						<p class="item_title">自动曝光 防滴防尘</p>
+						<p class="item_intro">全画幅单反相机</p>
+						<p class="item_price">￥19599</p>
+						<span class="item_more">了解更多</span>
+					</div>
+				</div>
+			</div>
+		</a>
+		
+		
+		
+		
+		
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.swiper-container', {
+				//方向 默认水平方向 horizontal  vertical垂直
+				direction: 'horizontal',
+				//是否开启自动播放 默认false true开启 默认切换时间间隔为3000ms
+//				autoplay: true,
+				autoplay: {
+    					delay: 2000,//2秒切换一次
+				},
+				//是否开启循环播放  默认false true开启
+				loop: true,
+				//设置切换效果:
+				// slide滑动 cube立方体 fade淡入 coverflow 3d流 flip 3d翻转
+				effect: "slide",
+//				fadeEffect: {
+// 					crossFade: true,
+//				},
+
+				// 如果需要分页器
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+					bulletActiveClass: 'dots',
+					clickable: true,
+				},
+				on: {
+    					slideChangeTransitionStart: function(){
+    						//activeIndex 返回当前活动块(激活块)的索引
+     				 //alert(this.activeIndex);
+     				 //当前活动块的索引,与activeIndex不同的是，在loop模式下不会将复制的块的数量计算在内
+     				 console.log(this.realIndex);
+    					},
+  				},
+
+			})
+		</script>
+	</body>
+</html>

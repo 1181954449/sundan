@@ -66,4 +66,6 @@ public interface GoodsDao {
     public List<goods_img> findgoodsCutImg(int typeNumber);
     // 获取不同颜色的图片编号
     public int findgoodsTypeNumber(Goods_type goods_type);
+    // 根据goodsId获取goods
+    public Goods selectGoodsList(int goodsId);
 }

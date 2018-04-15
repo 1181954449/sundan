@@ -1,0 +1,269 @@
+
+
+.swiper-container {
+	position: relative;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+#container_q{
+	/*position: relative;*/
+	background: #efeff2;
+}
+.top_swiper_q{
+	height: 380px;	
+}
+.import_wrap_p{
+	width: 1200px;
+	margin: auto;
+	overflow: hidden;
+	/*border: 1px solid;*/
+}
+.import_title_p{
+	margin-top: 62px;
+	font-size: 26px;
+	color: #606f8b;
+}
+.import_title_p span{
+	font-size: 14px;
+	color: #b1b1ce;
+}
+.hot_swiper_p{
+	width: 486px;
+	height: 552px;
+	float: left;
+	margin-top: 10px;
+}
+.hot_right_q{
+	margin-top: 10px;
+	width: 704px;
+	height: 270px;
+	float: right;
+	background: white;
+	/*border: 1px solid;*/
+}
+.hot_right_img_q{
+	width: 270px;
+	height: 270px;
+	float: left;
+	margin-left: 30px;
+	/*border: 1px solid;*/
+}
+.hot_right_logo_q{
+	width: 148px;
+	height: 39px;
+	float: left;
+	margin-top: 40px;
+	/*border: 1px solid;*/
+}
+.hot_right_title_q,.hot_right_artical-q,
+.hot_right_selling-q, .buy_now_q{
+	width: 350px;
+	float: left;
+}
+.hot_right_title_q{
+	font-size: 17px;
+	margin-top: 10px;
+}
+.hot_right_artical-q{
+	font-size: 13px;
+	margin: 20px 0;
+}
+.hot_right_selling-q{
+	font-size: 15px;
+	margin: 10px 0;
+}
+.hot_right_q span,
+.hot_right_bottom_q span,
+.hot_right_bottom_selling_q span{
+	font-size: 24px;
+	font-weight: bold;
+	color: red;
+}
+
+.hot_right_bottom_q{
+	float: left;
+	width: 347px;
+	height: 273px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: white;
+}
+.hot_right_bottom_img_q{
+	width: 164px;
+	height: 164px;
+	float: left;
+	margin-top: 55px;
+	/*border: 1px solid;*/
+}
+.hot_right_bottom_logo_q{
+	float: left;
+	width: 148px;
+	height: 40px;
+	margin-top: 40px;
+	/*border: 1px solid;*/
+}
+.hot_right_bottom_title_q, .hot_right_bottom_selling_q{
+	width: 174px;
+	margin: 10px 0;
+	float: left;
+}
+.hot_right_bottom_title_q{
+	font-size: 15px;
+	word-break: break-all;
+}
+.hot_right_bottom_selling_q{
+	font-size: 14px;
+}
+.hot_buy_now_bottom_q{
+	margin: 10px 0;
+}
+
+
+
+.buy_now_q{
+	width: 130px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color: white;
+	background: #3257a1;
+}
+.wrap_top_interval_q{
+	width: 100%;
+	clear: both;
+}
+/*国家分类*/
+.coutry_logo_wrap_q{
+	width: 100%;
+	height: 98px;
+}
+.country_logo_q{
+	width: 240px;
+	height: 90px;
+	float: left;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.country_logo_img_q{
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+.country_logo_title_q{
+	width: 120px;
+    height: 60px;
+    float: left;
+    font-size: 22px;
+    color: #53617f;
+    margin: 20px 0 0 20px;
+}
+.import_country_usa_q{
+	height: 584px;
+	width: 100%;
+	margin-top: 70px;
+	/*border: 1px solid;*/
+}
+.import_country_left_img_q{
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	float: left;
+}
+.coutry_direction1_img_q{
+	position: absolute;
+	top: 1660px;
+	left: 140px;
+}
+.coutry_direction2_img_q{
+	position: absolute;
+	top: 2410px;
+	left: 1400px;
+}
+.coutry_direction3_img_q{
+	position: absolute;
+	top: 2970px;
+	left: 140px;
+}
+.coutry_direction4_img_q{
+	position: absolute;
+	top: 3730px;
+	left: 1400px;
+}
+
+
+.import_country_right_article{
+	position: relative;
+	z-index: 1;
+	width: 415px;
+	height: 287px;
+	background: white;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.country_right_article_img{
+	width: 210px;
+	height: 210px;
+	float: left;
+	margin-top: 15px;
+}
+.country_right_article_title{
+	width: 191px;
+	float: left;
+	font-size: 17px;
+	margin-top: 25px;
+	word-break: break-all;
+	/*border: 1px solid;*/
+}
+.country_right_article_title_con{
+	width: 191px;
+	float: left;
+	font-size: 12px;
+	margin: 20px 0;
+}
+.import_life{
+	width: 290px;
+	height: 290px;
+	float: left;
+	margin-top: 25px;
+	margin-right: 10px;
+	background: white;
+	/*border: 1px solid;*/
+}
+.import_life_title{
+	width: 160px;
+	height: 60px;
+	font-size: 18px;
+	line-height: 60px;
+	font-size: 18px;
+	margin-left: 10px;
+	color: #606f8b;
+	float: left;
+}
+.import_life_enter{
+	width: 90px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: white;
+	float: right;
+	background: #3257a1;
+	margin-top: 10px;
+	margin-right: 10px;
+}

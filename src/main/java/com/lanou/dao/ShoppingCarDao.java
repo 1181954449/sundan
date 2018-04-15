@@ -12,8 +12,14 @@ import java.util.List;
 public interface ShoppingCarDao {
     //添加商品到购物车  通过userId 和 goodsId
     public int addShoppingCar(ShoppingCar shoppingCar);
+    // 添加之前做的查询判断
+    public ShoppingCar findShoppingCar(ShoppingCar shoppingCar);
     //通过userid获的所有商品信息
     public List<Goods> findGoodsList(int userId);
     //删除购物车的商品 通过userId 和 goodsId
     public int deleteShop(ShoppingCar sc);
+    // 修改数量
+    public int updateNumber(ShoppingCar shoppingCar);
+
+
 }

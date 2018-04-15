@@ -36,6 +36,7 @@
         <result column="orderDate" property="orderDate"/>
         <result column="order_goodsId" property="order_goodsId"/>
         <result column="orderDistribution" property="orderDistribution"/>
+        <result column="user_id" property="user_id"/>
     </resultMap>
     <sql id="data">
         (orderId, orderCoding, orderRemark, orderForm, orderIsDelet, orderPay,
@@ -54,4 +55,17 @@
         VALUE
         <include refid="insert_data"/>
     </insert>
+    <delete id="deleteOrder" parameterType="int">
+        DELETE FROM sun_order WHERE orderId = #{0}
+    </delete>
+    <!--查看所有订单-->
+    <select id="findAllOrder" parameterType="int" resultMap="OrderResult">
+        SELECT * FROM sun_order WHERE user_id = #{0}
+    </select>
+    <update id="pay" parameterType="int">
+        UPDATE FROM sun_order SET orderForm = '已付款'
+    </update>
+    <update id="cancelOrder" parameterType="int">
+        UPDATE FROM sun_order SET orderForm = '订单已取消'
+    </update>
 </mapper>

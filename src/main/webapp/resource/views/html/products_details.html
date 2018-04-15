@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>详情页</title>
+		<link rel="stylesheet" type="text/css" href="../common/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../common/htmleaf_demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/style_h.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/products_details.css" />
+	</head>
+
+	<body>
+		<!--公用头部-->
+		<div class="dingbu"></div>
+		<!--详情页所在位置-->
+		<section class="pros_where_wrap">
+			<div class="pros_where">
+				<span>
+					<a href="###">首页&nbsp;&gt;</a>
+				</span>
+			</div>
+		</section>
+		<!--详情页内容区-->
+		<section class="products_details_wrap">
+			<form action="">
+				<section class="pros_details_maincon">
+					<!--也就是左侧-->
+					<section class="pros_album">
+						<!--左侧的上半部分-->
+						<!--放大镜-->
+						<div class="pros_album_pics">
+							<!--图片跟随变化的-->
+							<img src="" />
+							<!--放大镜-->
+							<div id="zoom"></div>
+						</div>
+						<!--右侧放大图跟随变化的-->
+						<div class="zoom_big">
+							<img src="" alt="" id="img1" />
+						</div>
+						<!--左侧下半部分列表-->
+						<ul class="pros_album_pics_list">
+							<!--<li class="selected"></li>
+							<li><img src="" alt="" /></li>-->
+						</ul>
+						<!--左侧下半部分-->
+						<section class="pros_contact">
+							<span>商品编号:<span id="serial"></span></span>
+							<span class="pros_shareto">
+							<span>分享到</span>
+							<a href="#"><img src="../img/share-qq.png" /></a>
+							<a href=""><img src="../img/share_weixin.png" /></a>
+							<a href=""><img src="../img/share_xinlang.png" /></a>
+							</span>
+							<span class="erweima_buy">
+								<!--二维码在这里⬇-->
+								<a href="###">扫码购买<img src="../img/pros_erweima.png" style="width: 25px; height: 25px;vertical-align: middle; margin-left: 10px;"/></a>
+								<img src="../img/pros_erweima.png" id="erwei"/>
+							</span>
+							<span class="pros_contact_shoucang">收藏</span>
+						</section>
+					</section>
+					<!--右侧-->
+					<div class="prod_information">
+						<!--商品名字和价格-->
+						<div class="pro_na_pri">
+							<!--这里写title-->
+							<a href="">
+								<div class="pro_name_title">
+									<h2 title="goodsTitle"></h2>
+								</div>
+							</a>
+							<!--这里写价格-->
+							<div class="pro_pri">￥<span>价格3299</span></div>
+						</div>
+						<!--购买区-->
+						<div class="pro_buy">
+							<div class="pro_style">
+								<div class="pro_style_item">
+									<span class="please_forcolor">选择颜色</span>
+									<!--<a href=""><span class="pro_style_color selected"></span></a>
+									<a href=""><span class="pro_style_color"></span></a>-->
+								</div>
+								<div class="pro_style_item">
+									<span>选择容量</span>
+									<a href="" class="a_rongliang">
+										<!--<span class="pro_style_capa selected">容量..</span>
+										<span class="pro_style_capa">容量..</span>
+										<span class="pro_style_capa">容量..</span>
+										<span class="pro_style_capa">容量..</span>-->
+									</a>
+								</div>
+			 				</div>
+							<!--action区域-->
+							<ul class="pro_action">
+								<!--数量库存-->
+								<li class="pro_stock">
+									<span>数量</span>
+									<div class="pro_stock_num">
+										<a href="javascript:void(0)" class="pro_stock_l">-</a>
+										<input type="text" value="1" id="pro_number" />
+										<a href="javascript:void(0)" class="pro_stock_r">+</a>
+									</div>
+									<span id="pro_stock_enough">库存充足</span>
+								</li>
+								<!--简介-->
+								<ul class="pro_textstore">
+									<!--<li></li>-->
+								</ul>
+								<!--配送至-->
+								<li class="pro_sendto">
+									<span>配送至</span>
+									<div id="pro_address">
+										<div>这里写地址</div>
+										<span class="pro_address_arrow"></span>
+									</div>
+								</li>
+								<!--按钮btn-->
+								<li class="pro_buy_action">
+									<button type="submit" class="pro_action_btn pro_btn_now">立即购买</button>
+									<button type="submit" class="pro_action_btn pro_btn_add">加入购物车</button>
+									<a href="###"><span class="online_server"><span>在线客服</span></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</form>
+			<!--预约到门店,可选,有些有,有些没有-->
+			<section class="pros_realshops">
+				<p class="real_title">预约到门店提货</p>
+				<ul class="real_list">
+					<p class="readinfor">您附近有<span>数字</span>家门店</p>
+					<a href="" class="mendain_now">
+						<li>
+							<span class="real_address">后台数据门店地址在你心里</span>
+							<!--根据后台数据来选择redtag 或者是 no_redtag 以及里面的文字-->
+							<span class="redtag tag">有货</span>
+							<span class="no_redtag tag">无货</span>
+							<div class="info_cover">查看地图</div>
+							<!--高德地图-->
+							<div id="container">
+								<!--关闭按钮-->
+								<div class="img_circle gaode_close">×</div>
+							</div>
+						</li>
+					</a>
+				</ul>
+			</section>
+			<!--高德地图-->
+			<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=41166486ba47868ac30025684dd0b313"></script>
+			<script type="text/javascript">
+				var map = new AMap.Map('container', {
+					zoom: 10,
+					center: [116.39, 39.9] //new AMap.LngLat(116.39,39.9)
+				});
+				var marker = new AMap.Marker({
+					position: [116.39, 39.9], //marker所在的位置
+					map: map //创建时直接赋予map属性
+				});
+			</script>
+			<!--相关产品-->
+			<section class="pro_relative">
+				<div class="pro_relative_title">
+					<h2 class="state">配件推荐</h2>
+					<h2>相关产品</h2>
+				</div>
+				<ul class="pros_re_list0">
+					<p>配件</p>
+					<ul class="peijian_list_wrap">
+						<li class="list_detail">
+							<a href="">
+								<div class="list_detail_img"><img src="" alt="" /></div>
+							</a>
+							<a href="">
+								<h3>后台数据 一堆描述 菜菜真漂亮 前凸后翘大长腿</h3></a>
+							<input type="checkbox" name="peijian" id="peijian" value="" />
+							<span class="price">¥后台数据</span>
+						</li>
+						<ul class="list_table">
+							<li><span class="had_choose">已选择:</span><em>数字</em>件配件</li>
+							<li><span class="peijian_dengyu">=</span>套餐价格:<span class="price">价格勾选与否</span></li>
+							<button type="submit" class="buy_now">立即购买</button>
+						</ul>
+					</ul>
+				</ul>
+				<ul class="pros_re_list1">
+					<li class="list_detail">
+						<a href="">
+							<div class="list_detail_img"><img src="" alt="" /></div>
+						</a>
+						<a href="">
+							<h3>后台数据 一堆描述 菜菜真漂亮 前凸后翘大长腿</h3></a>
+						<input type="checkbox" name="peijian" id="peijian" value="" />
+						<span class="price">¥后台数据</span>
+					</li>
+					<li class="list_detail">
+						<a href="">
+							<div class="list_detail_img"><img src="" alt="" /></div>
+						</a>
+						<a href="">
+							<h3>后台数据 一堆描述 菜菜真漂亮 前凸后翘大长腿</h3></a>
+						<input type="checkbox" name="peijian" id="peijian" value="" />
+						<span class="price">¥后台数据</span>
+					</li>
+					<li class="list_detail">
+						<a href="">
+							<div class="list_detail_img"><img src="" alt="" /></div>
+						</a>
+						<a href="">
+							<h3>后台数据 一堆描述 菜菜真漂亮 前凸后翘大长腿</h3></a>
+						<input type="checkbox" name="peijian" id="peijian" value="" />
+						<span class="price">¥后台数据</span>
+					</li>
+				</ul>
+			</section>
+			<!--同类商品推荐-->
+			<section class="pro_resemble">
+				<!--左侧边栏-->
+				<div class="pro_opt_same">
+					<!--左侧边title-->
+					<div class="pro_same_title">同类商品推荐</div>
+					<!--左侧的列表内容-->
+					<!--<div class="pro_same_con">
+						<a href="">
+							<img src="" alt="" />
+							<div class="pro_same_ofimg">
+								<p>后台数据后台数据后台数据后台数据后台数据后台数据后台数据</p>
+								<span class="price">¥vcbvcbv</span>
+							</div>
+						</a>
+					</div>-->
+				</div>
+				<!--右侧-->
+				<div class="pro_same_right">
+					<!--需要固定的导航-->
+					<ul class="pro_same_nav">
+						<li class="cliked">
+							<h2><a href="">产品介绍</a></h2></li>
+						<li>
+							<h2><a href="">规格参数</a></h2></li>
+						<li>
+							<h2><a href="">售后服务</a></h2></li>
+						<li>
+							<h2><a href="">精彩问答</a></h2></li>
+						<li>
+							<h2><a href="">商品评论</a></h2></li>
+						<li>
+							<h2><a href="">了解顺电</a></h2></li>
+					</ul>
+					<!--导航相关的内容部分-->
+					<!--产品介绍-->
+					<div class="pro_intro tab">
+						<img src="" />
+						<!--<h3>热销推荐</h3>-->
+						<div class="hot_pro"></div>
+					</div>
+					<!--规格参数-->
+					<div class="pro_guigecs tab">
+						<div class="guide_title guide_main_title">规格参数</div>
+						<!--后台数据部分-->
+						<!--<div class="guide_title">主体</div>
+						<table class="pro_guige_table">
+							<tr>
+								<td class="item_titles">巴拉巴拉美少女</td>
+								<td>vcdvfd</td>
+							</tr>
+						</table>-->
+					</div>
+					<!--售后服务-->
+					<div class="pro_after_sever tab">
+						<p>承诺保证：顺电所销售产品均为正品行货，全国联保，质量问题享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务（软件/耗材/一次性用品不在保修范围之内），质保期为：1年</p>
+						<p>在顺电购买商品，更可享受30天退换货（自购买日起计算），须保证包装商品完好、齐全，不影响二次销售（人为损坏、定制商品、消耗器材不属于此范围之中）。</p>
+						<p>我们将尽最大努力保证商品信息的准确性，因厂家会在没有提前通知的情况下，对产品包装、产地、功能等内容进行更改，本商城不能完全保证您收到的货物与商城图片、产地、附件说明完全一致，但是确保为原厂正品，保证与当前市场上同样主流新品一致。商品参数信息等，仅供参考，以实物为准。若本商城没有及时更新，请大家谅解！</p>
+						<p>售前热线：400-8899-618（08:30-18:00 周一至周日）</p>
+						<p>售后电话：400-6788-688（09:00-20:00 周一至周日），
+							<a href="">了解更多请点击</a>
+						</p>
+					</div>
+					<!--精彩问答-->
+					<div class="pro_qanda tab">
+						<ul>
+							<li class="qa_clicked">
+								<a href="">全部问答<span>(后台数据)</span></a>
+							</li>
+							<li>
+								<a href="">商品咨询</a>
+							</li>
+							<li>
+								<a href="">订单配送</a>
+							</li>
+							<li>
+								<a href="">售后服务</a>
+							</li>
+						</ul>
+						<div class="forquestion">发表评论</div>
+					</div>
+					<!--商品评论-->
+					<div class="pro_remark tab">
+						<!--总体评价-->
+						<div class="there_star">
+							<div class="total_star">
+								<span>商品评分</span>
+								<!--后台数据-->
+								<i class="iconfont icon-star"></i>
+								<i class="iconfont icon-star"></i>
+								<i class="iconfont icon-star"></i>
+								<i class="iconfont icon-star"></i>
+								<i class="iconfont icon-star"></i>
+								<i>5.0</i>
+								<p><i>9</i>人评分</p>
+							</div>
+							<div class="stars">
+								<div>
+									<span>商品的综合评分</span>
+									<!--后台数据-->
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<em>5.0</em>
+								</div>
+								<div>
+									<span>客服的服务态度</span>
+									<!--后台数据-->
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<em>4.8</em>
+								</div>
+								<div>
+									<span>物流的服务质量</span>
+									<!--后台数据-->
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star"></i>
+									<i class="iconfont icon-star1"></i>
+									<em>3.8</em>
+								</div>
+							</div>
+						</div>
+						<!--个人评论-->
+						<div class="person_remark">
+							<ul>
+								<li class="remark_item">
+									<!--左侧-->
+									<div class="pro_member">
+										<div class="member_avatar">
+											<img src="" />
+										</div>
+										<p class="pro_level">LEVEL1</p>
+										<p class="pro_username">18855687281</p>
+									</div>
+									<!--右侧-->
+									<div class="remark_list_con">
+										<div class="start_time">
+											<span class="for_star">
+												<i class="iconfont icon-star"></i>
+												<i class="iconfont icon-star"></i>
+												<i class="iconfont icon-star"></i>
+												<i class="iconfont icon-star"></i>
+												<i class="iconfont icon-star"></i>
+											</span>
+											<span class="for_time">18-03-16 12:10</span>
+										</div>
+										<p class="user_con">东西是正品，感觉效果不错，等便宜点考虑再入手一个</p>
+										<ul class="pro_show_img">
+											<li><img src="" alt="" /></li>
+											<li><img src="" alt="" /></li>
+											<li><img src="" alt="" /></li>
+											<p>晒图</p>
+										</ul>
+										<div id="cover_forimg">
+											<div class="for_close">
+												<!--动态生成的图片-->
+												<img src="../img/test.jpg" />
+												<div class="img_circle">×</div>
+											</div>
+										</div>
+										<div class="reply_list">
+											<p>已经有<span>数字</span>条评论</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--了解顺电-->
+					<div class="know_shundian tab">
+						<img src="../img/liaojieshundian.jpg" />
+					</div>
+				</div>
+			</section>
+			<section class="may_forpro">
+				<div class="main_con">
+					<!--section标题区-->
+					<div class="title_may">
+						<p>您可能喜欢以下商品</p>
+						<div class="may_title_btn">
+							<a href="###" id="may_btn_l"></a>
+							<a href="###" id="may_btn_r"></a>
+						</div>
+					</div>
+					<!--轮播区域-->
+					<div class="may_lunbo">
+						<!--内容区足够大-->
+						<ul id="may_lunbo_con">
+							<!--单个产品-->
+							<li class="may_goods_block">
+								<a href="" class="may_good_img">
+									<img src="" />
+								</a>
+								<div class="may_goods_detail">
+									<h4>OPPO R15 梦镜版  6GB+128GB 全网通 全面屏双摄拍照娱乐手机 双卡双待</h4>
+									<p class="price">￥3299.00</p>
+								</div>
+								<div class="may_goods_cover">
+									<div class="price">￥3299.00</div>
+									<div class="may_goods_goshopping">加入购物车</div>
+								</div>
+							</li>
+
+							<!--单个产品-->
+							<li class="may_goods_block">
+								<a href="" class="may_good_img">
+									<img src="" />
+								</a>
+								<div class="may_goods_detail">
+									<h4>OPPO R15 梦镜版  6GB+128GB 全网通 全面屏双摄拍照娱乐手机 双卡双待</h4>
+									<p class="price">￥3299.00</p>
+								</div>
+								<div class="may_goods_cover">
+									<div class="price">￥3299.00</div>
+									<div class="may_goods_goshopping">加入购物车</div>
+								</div>
+							</li>
+							<!--单个产品-->
+							<li class="may_goods_block">
+								<a href="" class="may_good_img">
+									<img src="" />
+								</a>
+								<div class="may_goods_detail">
+									<h4>OPPO R15 梦镜版  6GB+128GB 全网通 全面屏双摄拍照娱乐手机 双卡双待</h4>
+									<p class="price">￥3299.00</p>
+								</div>
+								<div class="may_goods_cover">
+									<div class="price">￥3299.00</div>
+									<div class="may_goods_goshopping">加入购物车</div>
+								</div>
+							</li>
+							<!--单个产品-->
+							<li class="may_goods_block">
+								<a href="" class="may_good_img">
+									<img src="" />
+								</a>
+								<div class="may_goods_detail">
+									<h4>OPPO R15 梦镜版  6GB+128GB 全网通 全面屏双摄拍照娱乐手机 双卡双待</h4>
+									<p class="price">￥3299.00</p>
+								</div>
+								<div class="may_goods_cover">
+									<div class="price">￥3299.00</div>
+									<div class="may_goods_goshopping">加入购物车</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
+		<!--底部-->
+		<div class="de_db"></div>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../common/index_yb.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/products_details.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".de_db").load("../common/footer.html");
+			});
+		</script>
+	</body>
+	
+
+</html>

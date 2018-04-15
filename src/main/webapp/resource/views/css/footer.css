@@ -1,0 +1,247 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+body{
+	font-family: "微软雅黑";
+}
+/*图标*/
+#wrap {
+	width: 100%;
+	height: 100px;
+	background: #eff1f0;
+}
+
+#header {
+	width: 1035px;
+	margin: 0 auto;
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+	height: 100px;
+}
+
+#header span {
+	margin-left: 20px;
+	/*line-height: 100px;*/
+	font-weight: 400;
+	/*align-self: center;*/
+	color: #6a6a6a;
+}
+/*内容前三行*/
+#content {
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+	height: 104px;
+	margin-top: 21px ;
+	margin-bottom: 21px ;
+}
+#content img{
+	width: 12px;
+	height: 12px;
+}
+#space{
+	height: 35px;
+}
+.hotline{
+	    color: #313131;
+    font-size: 14px;
+    font-weight: 600;
+   
+    
+}
+.contentShowFirst,.contentShowSecond{
+	
+ height: 30px;
+ line-height: 30px;
+ color: #313131;
+font-size: 14px;
+}
+#answer{
+	color: #313131;
+font-size: 14px;
+
+}
+
+
+
+
+
+
+#footer {
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#footerItem {
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: nowrap row;
+	align-items: center;
+	justify-content: center;
+}
+/*新手*/
+#nav_footer {
+	width: 1225px;
+	height: 261px;
+	margin: 0 auto;
+	border-top: 1px solid #e1e1e1;
+}
+#navcontent{
+	margin-left: 64px;
+	width: 1175px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	
+}
+#nav p{
+	line-height: 41px;
+	height: 41px;
+	font-size: 12px;
+	color: #707070;
+}
+#nav .pay{
+font-size: 12px;
+color: #313131;
+width: 100%;
+font-weight: 600;
+}
+#nav .hotline{
+	color: #313131;
+    font-size: 14px;
+    font-weight: 600;
+}
+#nav a p:hover{
+	color: #00bbd7;
+}
+#nav .test{
+	line-height: 27px;
+	height: 32px;
+}
+#nav #testPlace p{
+	line-height: 27px;
+	height: 27px;
+	color: #313131;
+}
+#shop{
+	background: url(../img/footer/footer_ji.png) no-repeat;
+	background-position: 38px  50px;
+	height: 300px;
+}
+#place {
+	width: 140px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-flow: wrap row;
+}
+#place p{
+	width: 68px;
+	height: 32px;
+	line-height: 32px;
+	color: #313131;
+}
+#href {
+	width: 1225px;
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-flow: wrap column; 
+	border-bottom: 1px solid #e1e1e1;
+	/*margin: 0 20%;*/
+}
+#hrefLink{
+	width: 1100px;
+	margin: 0 auto;
+}
+#href .hotline{
+	color: #313131;
+    font-size: 14px;
+    font-weight: 600;
+}
+#BtwoB span{
+	line-height: 41px;
+	height: 41px;
+	font-size: 12px;
+	color: #707070;
+}
+#footerItemFirst{
+	height: 58px;
+	line-height: 58px;
+	font-size: 12px;
+	color: #313131;
+}
+#footerItem{
+	height: 58px;
+	line-height: 58px;
+}
+#footerItem  div{
+	width: 142px;
+	border-right: 1px solid #e1e1e1; 
+}
+#footerItem span{
+	font-size: 12px;
+	color: #313131;
+	
+	
+}
+#footerItem img,#header img{
+	vertical-align: middle;
+	padding-left: 20px;
+}
+#footerItem  .weiXin{
+	border-right: 1px solid white;
+	position: relative;
+}
+#footerItem  .weiBo{
+	border-right: 1px solid #e1e1e1;
+}
+/*display和animation冲突,hover是hover里面的具体元素*/
+#footerItem .QR img{
+	width: 127px;
+	height: 127px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	
+}
+#footerItem .QR  img:hover{
+	opacity: 1;
+	-webkit-animation:line 1s forwards ;
+	-o-animation:line 1s forwards ;
+	animation:line 1s forwards;
+}
+@-webkit-keyframes line {
+	from { transform: translateY(0); }
+	to {transform: translateY(-48px);  }
+}
+@-o-keyframes line {
+	from { transform: translateY(0); }
+	to {transform: translateY(-48px);  }
+
+}
+@-moz-keyframes line{
+	from { transform: translateY(0); }
+	to {transform: translateY(-48px);  }
+
+}
+@keyframes line{
+	from { transform: translateY(0); }
+	to {transform: translateY(-48px);  }
+
+}

@@ -1,0 +1,283 @@
+
+.banner {
+	width: 100%;
+	height: 450px;
+	min-width: 1225px;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 30px;
+}
+
+
+/*.swiper-pagination-bullet-active {
+	background: white;
+}*/
+
+.dots {
+	width: 10px;
+	height: 10px;
+	background: rgb(0,187,214);
+	opacity: 1;
+}
+
+/******/
+a {
+	text-decoration: none;
+}
+.clearfix {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+.center {
+    width: 1225px;
+    margin: 0 auto;
+}
+.hot {
+    margin-top: 56px;
+    height: 240px;
+}
+.hotpic {
+    width: 392px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+.hot_r {
+    margin-right: 10px;
+}
+.part1 {
+    width: 100%;
+    height: 650px;
+    min-width: 1200px;
+    background: #f1f1f1;
+}
+.nav {
+    padding: 58px 0;
+}
+.nav .title {
+    font-size: 36px;
+    color: #000;
+}
+.nav ul {
+    float: right;
+}
+.nav ul li {
+    float: left;
+    font-size: 16px;
+    line-height: 34px;
+    text-align: center;
+    color: #000;
+}
+.line {
+    border-bottom: 3px solid #000;
+}
+.rr {
+    margin-right: 38px;
+    width: 110px;
+}
+.mr {
+    margin-right: 16px;
+}
+.product {
+    width: 288px;
+    height: 400px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    color: #000;
+    float: left;
+}
+.tag_1 {
+    background: #fe0284;
+}
+.tag_2 {
+    background: #f9622b;
+}
+.tag_3 {
+    background: #4c79ca;
+}
+.tag_4 {
+    background: #15c88b;
+}
+.tag {
+    display: block;
+    line-height: 25px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    position: absolute;
+    top: 18px;
+    left: 25px;
+}
+.picture {
+    margin-top: 60px;
+}
+.name {
+	font-size: 14px;
+	margin-top: 16px;
+}
+.brand {
+	font-size: 15px;
+	margin-top: 16px;
+	margin-bottom: 25px;
+	color: #bebdbd;
+}
+.price {
+    font-size: 24px;
+    color: #000;
+}
+.txt {
+    width: 288px;
+    height: 400px;
+    position: absolute;
+    background: url(http://www.sundan.com/prefecture/digital/images/1px.png);
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    display: none;
+}
+.txt ul {
+    margin-top: 90px;
+}
+.txt ul li {
+    font-size: 14px;
+    line-height: 28px;
+    height: 28px;
+    text-align: left;
+    padding-left: 60px;
+}
+.buynow {
+    display: block;
+    width: 178px;
+    height: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    line-height: 40px;
+    border-radius: 3px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.product:hover .txt {
+	display: block;
+}
+.hide {
+	display: none;
+}
+.dotbox {
+	width: 84px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.dot {
+	width: 6px;
+    height: 6px;
+    background: #000;
+    border-radius: 6px;
+    float: left;
+    margin: 12px 10px;
+    cursor: pointer;
+}
+.firstdot{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	border:1px solid #000;
+	float: left;
+	margin:10px;
+	cursor: pointer;
+	background: none;
+}
+
+/****/
+.part2 {
+    width: 100%;
+    height: 1045px;
+    min-width: 1200px;
+    background: #fff;
+}
+.tit {
+    line-height: 154px;
+    font-size: 36px;
+}
+.brandpic {
+    width: 592px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 20px;
+}
+.brandpic1 {
+    width: 288px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+}
+
+/****/
+.part5 {
+    width: 100%;
+    height: 650px;
+    min-width: 1200px;
+    background: #f1f1f1;
+}
+.popular {
+    width: 392px;
+    text-align: center;
+    float: left;
+}
+.hot_r {
+    margin-right: 12px;
+}
+.intro {
+    font-size: 16px;
+    color: #7e7e7e;
+    line-height: 60px;
+}
+.pic_sy {
+    padding-top: 30px;
+    height: 211px;
+    overflow: hidden;
+}
+.buy {
+    width: 145px;
+    height: 38px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    display: block;
+    font-size: 16px;
+    line-height: 38px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.product1 {
+    width: 592px;
+    height: 400px;
+    background: #fff;
+    text-align: center;
+    color: #000;
+    float: left;
+    margin: 0 16px;
+}
+.part4 {
+    width: 100%;
+    height: 584px;
+    min-width: 1200px;
+    background: #f1f1f1;
+}
+.buy:hover {
+	background: cornflowerblue;
+	color: white;
+	border-color: cornflowerblue;
+}

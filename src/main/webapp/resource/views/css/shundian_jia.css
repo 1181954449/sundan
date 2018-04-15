@@ -1,0 +1,246 @@
+body, html {
+	width: 100%;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+}
+#container {
+	margin-top: 0;
+	margin-bottom: 0;
+	background: #F2F3F2;
+}
+.body_background {
+    background-color: #f3f3f3;
+}
+.inner-wrap {
+	width: 1206px;
+	margin: 20px auto;
+}
+.page-container .section {
+    margin-bottom: 20px;
+}
+.page_flow, .page_flow_title {
+    overflow: hidden;
+    width: 100%;
+    color: #33353d;
+}
+.page_flow_title {
+    line-height: 45px;
+}
+.page_flow_h3 {
+    display: inline;
+    font-size: 22px;
+    float: left;
+}
+.page_flow_a {
+    float: right;
+    text-align: left;
+}
+.page_flow_a a {
+    float: left;
+    color: #33353d;
+    font-size: 14px;
+    margin-left: 25px;
+}
+
+
+
+.page_tab {
+    background-color: #33353d;
+    overflow: hidden;
+    color: #fff;
+}
+.page_tab .switchable-triggerBox {
+    width: 100%;
+    height: 36px;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+.switchable-trigger {
+	background-position: center center;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    background: url(../img/witchable-trigger.png) no-repeat;
+    font-size: 18px;
+    color: #fff;
+}
+.switchable-trigger1 {
+	background-position: center center;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    background: url(../img/witchable-trigger.png) no-repeat;
+    font-size: 18px;
+    color: #fff;
+}
+.switchable-trigger2 {
+	background-position: center center;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    background: url(../img/witchable-trigger.png) no-repeat;
+    font-size: 18px;
+    color: #fff;
+}
+.switchable-trigger3 {
+	background-position: center center;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    background: url(../img/witchable-trigger.png) no-repeat;
+    font-size: 18px;
+    color: #fff;
+}
+.switchable-trigger4 {
+	background-position: center center;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    background: url(../img/witchable-trigger.png) no-repeat;
+    font-size: 18px;
+    color: #fff;
+}
+
+.page_tab .switchable-triggerBox .switchable-trigger:first-child, .page_tab .switchable-triggerBox .first-tr {
+    background-position: center left;
+}
+
+.Msonormal {
+	text-indent: 21.0pt;
+	mso-char-indent-count:2.0;
+}
+
+
+
+.page_tab .switchable-triggerBox .active {
+    background: url(../img/witchable-trigger-active.png) no-repeat;
+    color: #33353d;
+    width: 33.33333333333%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 18px;
+}
+.active {
+	background: url(../img/witchable-trigger-active.png) no-repeat;
+    color: #33353d;
+}
+
+.switchable-panel {
+	display: none;
+}
+.cur {
+	display: block;
+}
+
+.page_tab_panel_left {
+    width: 387px;
+    float: left;
+    overflow: hidden;
+}
+.page_tab_panel_left_img {
+    width: 387px;
+    height: 434px;
+    overflow: hidden;
+}
+.page_tab_panel_left_banner {
+    position: relative;
+    width: 387px;
+    height: 198px;
+    background-color: #484a51;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.page_tab_panel_left_banner_text {
+    margin: 15px 25px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.page_tab_panel_right {
+    float: right;
+    width: 816px;
+    height: 715px;
+}
+.page_tab_panel_shoplist li {
+    width: 33.3333333333333%;
+    height: 206px;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #000;
+    text-align: center;
+}
+.page_tab_panel_shoplist_padding {
+    width: 260px;
+    height: 210px;
+    margin: 0px;
+    float: right;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+}
+.page_tab_panel_img {
+    max-width: 206px;
+    margin: auto;
+    padding-top: 10px;
+}
+.page_tab_panel_shoplist_padding img {
+    max-width: 206px;
+    max-height: 125px;
+}
+
+.page_tab_panel_shoplist_padding:first-child p {
+    padding: 0 20px;
+    height: 35px;
+    overflow: hidden;
+}
+.page_tab_panel_shoplist_padding p {
+	padding: 0 20px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

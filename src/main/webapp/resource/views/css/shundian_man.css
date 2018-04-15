@@ -1,0 +1,110 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+body {
+    font-size: 75%;
+    line-height: 1.5;
+}
+a {
+	text-decoration: none;
+}
+#container{
+	background: #F2F3F2;
+}
+.page-container {
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+.body_background {
+    background-color: #f3f3f3;
+}
+
+.shangtu {
+	width: 100%;
+	display: inline-block;
+}
+
+
+
+.body_background .inner-warp {
+    width: 1225px;
+    margin: 0 auto;
+}
+.page-container .section {
+    margin-bottom: 30px;
+}
+.page_flow, .page_flow_title {
+    overflow: hidden;
+    width: 100%;
+    color: #33353d;
+}
+.page_flow, .page_flow_title {
+    overflow: hidden;
+    width: 100%;
+    color: #33353d;
+}
+.page_flow_h2 {
+    color: #32353c;
+    font-size: 24px;
+    display: inline;
+    float: left;
+}
+.page_flow_a {
+    float: right;
+    text-align: left;
+}
+.man_a {
+    color: #32353c;
+    font-size: 14px;
+}
+.page_flow_a a {
+    float: left;
+    color: #33353d;
+    font-size: 14px;
+    margin-left: 25px;
+}
+.manflow_left, .manflow_r_le_top, .manflow_r_le_bottom, .manflow_r_ri_top, .manflow_r_ri_bottom {
+    position: relative;
+}
+.manflow_left {
+    width: 285px;
+    height: 600px;
+    float: left;
+}
+.manflow_right {
+    float: right;
+}
+
+.o2o_right_left_top_hover {
+    width: 100%;
+    height: 100%;
+    background: url(../img/o2ozhezhao.png);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+.man_flow a:hover .o2o_right_left_top_hover {
+    display: block;
+}
+
+.fl_left {
+    float: left;
+}
+.manflow_r_ri {
+    margin-left: 35px;
+}
+.manflow_r_le_top {
+    width: 570px;
+    height: 285px;
+}
+.manflow_r_le_top {
+    margin-bottom: 35px;
+}
+.mar_left {
+    margin-left: 35px;
+}
+.manflow_r_ri_bottom {
+    margin-top: 35px;
+}

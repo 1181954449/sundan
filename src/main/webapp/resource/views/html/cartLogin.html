@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../common/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../common/htmleaf_demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/style_h.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login_register_cart.css"/>
+	</head>
+	<body>
+		<div class="cartLogin">
+			<div class="cart_headbox">
+				<div class="cart_head">
+					<img src="../img/cart_logo.png"/>
+					<span class="cart_mycart">我的购物车</span>
+					<span id="">商品从门店发货，小件商品14:00前购买，当天发货。门店自提订单，24小时内将提货码发送至您的手机，请您留意手机短信。由于市场变化及各种合理商业努力都难以控制的因素的影响，
+							商城无法保证用户提交的订单希望购买的商品都有货；如用户拟购买的商品缺货，用户和商家都可取消订单。</span>
+				</div>
+				<div class="cart_stepbox">
+					<span class="cart_step1">我的购物车</span> <img src="../img/cart_step1.png" class="cart_step11"/>
+					<span class="cart_step2">填写核对订单</span><img src="../img/cart_step2.png" class="cart_step21"/>
+					<span class="cart_step3">成功提交订单</span>
+				</div>
+			</div>
+			<div class="cart_line"></div>
+			<div class="cartconbox">
+				<div class="cartcon">
+					<img src="../img/cartlog1.png"/>
+					<p><b>您的购物车里还没有商品，</b>您可以：<br />
+					将<a href="###">收藏夹</a>中的商品添加进来，或者去看看<a href="###">商城&gt;&gt;</a></p>
+				</div>
+			</div>
+			<div class="cartLogcon">
+				<div class="cartLogcon1">
+					<div class="cartLogcon1List">
+						<ul>
+							<li><input type="checkbox" name="" id="cartlist1" value="" /> <label class="lablelist1" for="cartlist1"></label>全选</li>
+							<li>商品名称</li>
+							<li>单价</li>
+							<li>优惠</li>
+							<li>数量</li>
+							<li>小计</li>
+							<li>积分</li>
+							<li>操作</li>
+						</ul>
+					</div>
+					<div class="cartgood1">
+						<ul>
+							<li><input type="checkbox" name="" id="cartlist1" value="" /> <label for="cartlist1"></label></li>
+							<li><img src="../img/8e29e990f7f8ae15a67abb56a5db92dad4272be9.jpg" alt="" /><p>三星（SAMSUNG）65英寸 4K 画壁艺术电视 UA65LS003AJXXZ</p></li>
+							<li>￥21999.00</li>
+							<li>￥0.00</li>
+							<li><div class=""><a href="###" class="aL1">—</a><input type="number" name="" id="" value="1" /><a href="#" class="aR2">+</a></div><span>余量有限</span></li>
+							<li>￥21999.00</li>
+							<li>—</li>
+							<li><span>收藏</span> | <span>删除</span>	</li>
+						</ul>
+					</div>
+					<div class="cartgood2box">
+						<div class="cartgood2list">
+							<ul>
+								<li><input type="checkbox" name="" id="" value="" />&nbsp;&nbsp;&nbsp;全选</li>
+								<li>凑单商品</li>
+								<li>删除选中商品</li>
+								<li>共 <span id="">1</span> 件商品，已选择 <span id="">1</span> 件</li>
+								<li>合计（不含运费）：<span>￥21999.00</span> 元</li>
+								<li><span class="continue">继续购物</span><span>去结算</span></li>
+							</ul>
+						</div>
+						<p>订单优惠金额：<span>￥0.00</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--公用底部-->
+		<div class="usedb"></div>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/index_log.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//加载底部
+				$(".usedb").load("../common/footer.html");
+				
+									if ($(".cartgood1").is(":empty")) {
+						console.log(1);
+					}
+					$(".cartconbox").hide();	
+					
+					
+					
+					var allpay = 0;//存储选中的商品的价格
+									
+					//------------------------------------------------
+					$(".cartgood1").on("click",".aL1",function(){//减少商品数量
+						if ($(this).next().val() > 1) {//商品数量大于1才可以减少
+							$(this).next().val(parseInt($(this).next().val()-1));//数量减1
+							//一种商品价格小计 单价*数量
+							$(this).parents("li").next().text("￥" + parseInt($(this).parents("li").prev().prev().text().slice(1))*parseInt($(this).parent().find("input").val()));
+							
+							if ($(this).parents("li").prev().prev().prev().prev().find("input").is(":checked")) {//商品被选中
+								allpay -= parseFloat($(this).parents("li").prev().prev().text().slice(1));
+							}
+						}else{//商品数量不能小于1 出现提示
+							
+						}
+						$(".cartgood2list ul li:nth-child(5) span").text("￥"+ allpay);
+						console.log( "减："+allpay);
+					});
+					
+					
+					$(".cartgood1").on("click",".aR2",function(){//增加商品数量
+						$(this).prev().val(parseInt($(this).prev().val())+1);//数量加1
+						//一种商品价格小计 单价*数量
+						$(this).parents("li").next().text("￥" + parseInt($(this).parents("li").prev().prev().text().slice(1))*parseInt($(this).parent().find("input").val()));
+						if ($(this).parents("li").prev().prev().prev().prev().find("input").is(":checked")) {//商品被选中
+							
+							allpay += parseFloat($(this).parents("li").prev().prev().text().slice(1));
+						}
+						console.log( "加："+allpay);
+						$(".cartgood2list ul li:nth-child(5) span").text("￥"+ allpay);
+					});
+					
+					
+					$(".cartgood1").on("change","input",function(){//选中商品
+						console.log("select");
+						$(".cartgood1 ul").each(function(i){//循环被选中的商品
+							++i;
+							console.log("++i:"+i);
+							if ($(".cartgood1 ul:nth-child("+i+")").find("li:nth-child("+i+") input").is(":checked")) {//商品被选中 增加该商品小计总价
+								allpay +=parseFloat($(this).find("li:nth-child(6)").text().slice(1));
+							}
+						})
+						$(".cartgood2list ul li:nth-child(5) span").text("￥"+ allpay);
+					});
+					//------------------------------------------------
+					
+					
+					
+					
+					//添加商品到购物车
+					$(".cartgood2list .continue").click(function(){//点击继续购物 添加商品
+						$(".cartgood1").append('<ul><li><input type="checkbox" name="" id="cartlist1" value="" /> <label for="cartlist1"></label></li><li><img src="../img/8e29e990f7f8ae15a67abb56a5db92dad4272be9.jpg" alt="" /><p>三星（SAMSUNG）65英寸 4K 画壁艺术电视 UA65LS003AJXXZ</p></li><li>￥21999.00</li><li>￥0.00</li><li><div class=""><a href="###" class="aL1">—</a><input type="number" name="" id="" value="1" /><a href="#" class="aR2">+</a></div><span>余量有限</span></li><li>￥21999.00</li><li>—</li><li><span>收藏</span> | <span>删除</span></li></ul>');
+					});
+					//删除购物车内商品
+					$(".cartgood1").on("click","ul li:last-child span:last-child",function(){
+						$(this).parents("ul").remove();
+					});
+//					$(".cartgood1 ul li:last-child span:last-child").click(function(){
+//						$(this).parents("ul").remove();
+////						$.get("Http://10.80.13.49:8091/shop/delete",{goodsId:,goodsvalue:,},function(){
+////							
+////						});
+//					if ($(".cartgood1").is(":empty")) {//购物车变空
+//						console.log(1);
+//					}
+//					});
+					
+						
+						
+						
+				
+	
+				
+	
+			});
+		</script>
+	</body>
+</html>

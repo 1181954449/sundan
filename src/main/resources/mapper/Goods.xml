@@ -303,5 +303,7 @@
 	<select id="goodsList" parameterType="int" resultMap="goodsInfoResult">
 		select goodsId, goodsTitle, price, goodsFirstPicture from sun_goods WHERE goods_propertyId = #{0};
 	</select>
-
+	<select id="selectGoodsList" parameterType="int" resultMap="goodsInfoResult">
+		select goodsId, goodsTitle, price, goodsFirstPicture from sun_goods WHERE goodsId = #{0};
+	</select>
 </mapper>

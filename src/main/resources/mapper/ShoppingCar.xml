@@ -50,6 +50,11 @@
         <result column="price" property="price"/>
         <result column="goodsFirstPicture" property="goodsFirstPic"/>
     </resultMap>
+
+    <select id="findShoppingCar" resultMap="ShoppingCarResult">
+        SELECT * FROM sun_shoppingcar WHERE userId = #{userId} and goodsId = #{goodsId}
+    </select>
+
     <sql id="shoppingCarCInfo">
         (userId, goodsId, number)
     </sql>
@@ -64,13 +69,16 @@
         <include refid="shoppingCarPInfo"/>
     </insert>
 
+    <update id="updateNumber" parameterType="com.lanou.entity.ShoppingCar">
+        UPDATE sun_shoppingcar SET number = number+1 WHERE userId = #{userId} and goodsId = #{goodsId}
+    </update>
+
     <select id="findGoodsList" parameterType="int" resultMap="ShoppingCarResult">
         SELECT
-        g.goodsId, g.goodsTitle, g.price, g.goodsFirstPicture
+        g.goodsId, g.goodsTitle, g.price, g.goodsFirstPicture, s.number
         FROM sun_shoppingcar s, sun_goods g
         WHERE s.goodsId = g.goodsId and s.userId = #{0}
     </select>
-
     <delete id="deleteShop" parameterType="ShoppingCar">
         DELETE FROM sun_shoppingcar WHERE userId = #{userId} and goodsId = #{goodsId}
     </delete>

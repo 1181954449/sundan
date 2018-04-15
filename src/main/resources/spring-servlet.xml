@@ -39,5 +39,10 @@
 			<!--<mvc:mapping path="/user/updatePasswordUser"/>-->
 			<!--<bean class="com.lanou.Interceptor.UserUpdateInterceptor"></bean>-->
 		<!--</mvc:interceptor>-->
+		<!--<mvc:interceptor>-->
+			<!--<mvc:mapping path="/shop/*"/>-->
+			<!--<bean class="com.lanou.Interceptor.ShoppingCarInterceptor"></bean>-->
+
+		<!--</mvc:interceptor>-->
 	</mvc:interceptors>
 </beans>

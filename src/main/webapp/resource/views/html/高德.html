@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 300px;
+				height: 180px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container"></div>
+	</body>
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=您申请的key值"></script>
+	<script type="text/javascript">
+		var map = new AMap.Map('container', {
+			zoom: 10,
+			center: [116.39, 39.9] //new AMap.LngLat(116.39,39.9)
+		});
+		var marker = new AMap.Marker({
+			position: [115, 30], //marker所在的位置
+			map: map //创建时直接赋予map属性
+		});
+	</script>
+
+</html>

@@ -17,5 +17,7 @@ public interface AddressDao {
     public int deleteAddress(int addressId);
     // 查找  默认地址id
     public int findDefultaddressId();
+    // 查询生成订单的订单地址
+    public Address selectOrderAddress(int orderId);
 
 }

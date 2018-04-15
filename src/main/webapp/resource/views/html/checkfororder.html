@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>立即购买添加订单</title>
+		<link rel="stylesheet" type="text/css" href="../common/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../common/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/checkfororder.css" />
+	</head>
+
+	<body>
+		<section class="nav_title_ms_wrap">
+			<div class="nav_title_ms">
+				<div class="c_title"><img src="../img/cart_logo.png" /></div>
+				<div class="orderman_me">收货人信息</div>
+				<div class="de_me">商品从门店发货，小件商品14:00前购买，当天发货。门店自提订单，24小时内将提货码发送至您的手机，请您留意手机短信。由于市场变化及各种合理商业努力都难以控制的因素的影响，商城无法保证用户提交的订单希望购买的商品都有货；如用户拟购买的商品缺货，用户和商家都可取消订单。</div>
+				<div class="bottom_line">
+					<div>我的购物车</div>
+					<div class="se">填写核对订单</div>
+					<div>成功提交订单</div>
+				</div>
+			</div>
+		</section>
+		<section class="con_check">
+			<div class="sendway">
+				<span class="wayto">配送方式</span>
+				<span class="forhome">送货到家</span>
+			</div>
+			<p class="sendadd">收货人地址</p>
+			<div class="clickadd">您还没有收货地址,马上<span style="color: #36B1CC;">添加</span>吧！</div>
+			<p class="wayto" style="float: left;margin-top: 10px;">支付方式</p>
+			<div class="after" style="float: left;">请先确定配送方式，之后再选择支付方式</div>
+		</section>
+		<section class="fapiao">
+			<div class="line1">
+				<span class="wayto_fa">发票信息</span>
+				<div class="needfa">
+					<span class="tax fa_selected fa_ho1">不需要发票</span>
+					<span class="tax fa_ho2">个人发票</span>
+					<span class="tax fa_ho3">公司发票</span>
+					<span class="tax fa_ho4">增值税</span>
+				</div>
+				
+			</div>
+			<div class="pro_list">
+				<div class="te_left">商品清单及优惠券</div>
+				<div class="te_right">返回修改购物车&gt;</div>
+			</div>
+			<div class="pro_titlez">
+				<div class="shangpin">商品</div>
+				<div class="dede">
+					<span>数量</span>
+					<span>库存</span>
+					<span>优惠</span>
+					<span>小计</span>
+					<span>积分</span>
+				</div>
+			</div>
+			<div class="pro_titlez" id="hasheight">
+				<div class="shangpin_de">
+					<img src="../img/259620.jpg" class="forimg"/>
+					<a href=""><div style="padding-top: 10px;">减肥哦数据港;你解耦;世界观佛定时关机佛的kjipjiimjdflsi9kjo9sj就看到较高的人生</div></a>
+				</div>
+				<div class="dede">
+					<span>数量</span>
+					<span>有货</span>
+					<span style="color: #C00000;"></span>
+					<span style="color: #C00000;">第三方</span>
+					<span>-</span>
+				</div>
+			</div>
+		</section>
+		<section class="youhui_wrap">
+			<div class="you_left">
+				<div class="jia_circle">+</div>
+				<span>使用优惠券</span>
+				<p class="obeizhu">订单备注:</p>
+				<!--添加说明-->
+				<textarea class="addrequire" placeholder="请在此填写您对该订单或商品的特殊要求或说明，最多300字。"></textarea>
+			</div>
+			<div class="you_right">
+				
+			</div>
+			
+		</section>
+		<div class="dibu"></div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../js/checkfororder.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".dibu").load("../common/footer.html");
+			});
+		</script>
+	</body>
+
+</html>

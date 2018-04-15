@@ -1,0 +1,115 @@
+body {
+   
+    background-color: #0b0b0b;
+    padding: 0;
+    border: 0;
+}
+.top-div {
+    min-width: 1300px;
+}
+.top-in {
+    min-width: 1300px;
+    margin: 0 auto;
+}
+.top-banner {
+    min-width: 1300px;
+    height: 481px;
+    background: url(../img/banner_01111.jpg) top center no-repeat;
+}
+.top-banner2 {
+    min-width: 1300px;
+    height: 548px;
+    background: url(../img/banner_0222.jpg) top center no-repeat;
+    text-align: center;
+}
+.robot {
+    width: 100%;
+    height: 392px;
+    float: left;
+    margin: 153px auto auto auto;
+}
+.counter1 {
+    min-width: 1300px;
+    /* height: 1000px; */
+}
+.content1 {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 142px;
+    /* height: 1000px; */
+}
+.product {
+    width: 1000px;
+    height: 468px;
+    float: left;
+    color: #ffffff;
+}
+.item {
+    width: 467px;
+    float: left;
+}
+.brand {
+    width: 470px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 auto 42px 0;
+}
+.title {
+    width: 470px;
+    height: 80px;
+    line-height: 40px;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: left;
+}
+.intro {
+    width: 352px;
+    height: 125px;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 30px;
+    color: #c5c5c5;
+    margin: 48px auto 45px 0;
+}
+.price {
+    width: 340px;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 94px auto 35px 0;
+    line-height: 24px;
+    color: white;
+}
+.icon {
+    width: 31px;
+    height: 31px;
+}
+.icon img {
+    width: 31px;
+    height: 31px;
+    margin: 0 7px -3px auto;
+}
+.learn-more {
+    width: 340px;
+}
+.question {
+    width: 1000px;
+    height: 121px;
+    margin: 99px auto;
+    float: left;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+    margin-left: 56px;
+    width: 410px;
+}
+.back-to-top {
+    margin: 130px auto 87px auto;
+    text-align: center;
+    cursor: pointer;
+}

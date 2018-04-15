@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/shundian_yijiu_shouji.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/htmleaf_demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../common/style_h.css"/>
+	</head>
+	<body>
+		<div class="wamgwang"></div>
+		
+		<div class="container">
+			<!--回收-->
+			<div class="search-crumb">
+				<ul class="crumb-list clearfix">
+					<li>
+						<a id="recycleHome" href="###">回收首页</a>
+					</li>
+					<li class="gt">&gt;</li>
+					<li>
+						<a href="###">
+							手机回收</a>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<!--搜索-->
+			<div class="opt-header">
+				<div class="search_div">
+					<div class="search_bar ydm-fl">
+						<div class="nav-submit-button">
+							<div class="search-btn" onclick="doSearch()">搜索机型</div>
+						</div>
+						<input id="keywords" name="keywords" value="" placeholder="搜索您要回收的手机" onkeydown="checkSearchEnter(event)" class="search_ipt" autocomplete="off">
+						<div id="searchBar" style="position:relative;">
+							<div class="autocomplete-suggestions" style="position: absolute; display: none; width: 340px; top: 0px; left: 0px; max-height: 350px; z-index: 9990;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="righttop">
+					<a href="###">
+						<div class="myorder">我的订单</div>
+					</a>
+					<a href="###">
+						<div class="helpcenter">帮助中心</div>
+					</a>
+				</div>
+			</div>
+			
+			<!--品类-->
+			<div class="ydm-selector">
+				<div class="selector-item">
+					<table class="category">
+						<tbody>
+							<tr>
+								<th>回收品类：</th>
+								<td>
+									<ul>
+										<li category="3" class="selected">
+											<a title="手机" href="###">手机</a>
+										</li>
+										<li category="4">
+											<a title="平板" href="###">平板</a>
+										</li>
+										<li category="5">
+											<a title="笔记本" href="###">笔记本</a>
+										</li>
+										<li category="1">
+											<a title="相机品类" href="###">相机品类</a>
+										</li>
+										<li category="2">
+											<a title="大家电" href="###">大家电</a>
+										</li>
+										<li category="7">
+											<a title="电脑配件" href="###">电脑配件</a>
+										</li>
+										<li category="6">
+											<a title="游戏机" href="###">游戏机</a>
+										</li>
+										<li category="14">
+											<a title="台式机" href="###">台式机</a>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="selector-item other">
+					<table class="brands">
+						<tbody>
+							<tr>
+								<th valign="top">回收品牌：</th>
+								<td>
+									<ul id="brandsMoreUl" class="brandsUl oneline ">
+										<li pcode="p0065">
+											<a title="苹果" data-pcode="p0065" href="###">苹果</a>
+										</li>
+										<li pcode="p0336">
+											<a title="乐视" data-pcode="p0336" href="###">乐视</a>
+										</li>
+										<li pcode="p0133">
+											<a title="联想" data-pcode="p0133" href="###">联想</a>
+										</li>
+										<li pcode="p1631">
+											<a title="国美" data-pcode="p1631" href="###">国美</a>
+										</li>
+										<li pcode="p0066">
+											<a title="三星" data-pcode="p0066" href="###">三星</a>
+										</li>
+										<li pcode="p0109">
+											<a title="小米" data-pcode="p0109" href="###">小米</a>
+										</li>
+										<li pcode="p0110">
+											<a title="华为" data-pcode="p0110" href="###">华为</a>
+										</li>
+										<li pcode="p0127">
+											<a title="魅族" data-pcode="p0127" href="###">魅族</a>
+										</li>
+										<li pcode="p0337">
+											<a title="华硕" data-pcode="p0337" href="###">华硕</a>
+										</li>
+										<li pcode="p0132">
+											<a title="诺基亚" data-pcode="p0132" href="###">诺基亚</a>
+										</li>
+										<li pcode="p0111">
+											<a title="HTC" data-pcode="p0111" href="###">HTC</a>
+										</li>
+										<li pcode="p0112">
+											<a title="索尼" data-pcode="p0112" href="###">索尼</a>
+										</li>
+										<li pcode="p0113">
+											<a title="摩托罗拉" data-pcode="p0113" href="###">摩托罗拉</a>
+										</li>
+										<li pcode="p0114">
+											<a title="夏普" data-pcode="p0114" href="###">夏普</a>
+										</li>
+										<li pcode="p0338">
+											<a title="飞利浦" data-pcode="p0338" href="###">飞利浦</a>
+										</li>
+										<li pcode="p0115">
+											<a title="多普达" data-pcode="p0115" href="###">多普达</a>
+										</li>
+										<li pcode="p0116">
+											<a title="vivo" data-pcode="p0116" href="###">vivo</a>
+										</li>
+										<li pcode="p0117">
+											<a title="酷派" data-pcode="p0117" href="###">酷派</a>
+										</li>
+										<li pcode="p0118">
+											<a title="戴尔" data-pcode="p0118" href="###">戴尔</a>
+										</li>
+										<li pcode="p0119">
+											<a title="金立" data-pcode="p0119" href="###">金立</a>
+										</li>
+										<li pcode="p0120">
+											<a title="LG" data-pcode="p0120" href="###">LG</a>
+										</li>
+										<li pcode="p0121">
+											<a title="努比亚" data-pcode="p0121" href="###">努比亚</a>
+										</li>
+										<li pcode="p0122">
+											<a title="OPPO" data-pcode="p0122" href="###">OPPO</a>
+										</li>
+										<li pcode="p0123">
+											<a title="中兴" data-pcode="p0123" href="###">中兴</a>
+										</li>
+										<li pcode="p0124">
+											<a title="天语" data-pcode="p0124" href="###">天语</a>
+										</li>
+										<li pcode="p0125">
+											<a title="朵唯" data-pcode="p0125" href="###">朵唯</a>
+										</li>
+										<li pcode="p0126">
+											<a title="谷歌" data-pcode="p0126" href="###">谷歌</a>
+										</li>
+										<li pcode="p0128">
+											<a title="锤子" data-pcode="p0128" href="###">锤子</a>
+										</li>
+										<li pcode="p0129">
+											<a title="黑莓" data-pcode="p0129" href="###">黑莓</a>
+										</li>
+										<li pcode="p0130">
+											<a title="一加" data-pcode="p0130" href="###">一加</a>
+										</li>
+										<li pcode="p0131">
+											<a title="IUNI" data-pcode="p0131" href="###">IUNI</a>
+										</li>
+										<li pcode="p0134">
+											<a title="美图手机" data-pcode="p0134" href="###">美图手机</a>
+										</li>
+										<li pcode="p0135">
+											<a title="8848" data-pcode="p0135" href="###">8848</a>
+										</li>
+										<li pcode="p1001">
+											<a title="其他" data-pcode="p1001" href="###">其他</a>
+										</li>
+									</ul>
+								</td>
+								<th valign="top">
+									<a href="###;" class="brandsMore" id="brandsMore">
+										更多 
+									</a>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="canrecyle">可回收机型 1831个</div>
+			
+			<div id="proItems" class="proitems clearfix"></div>
+		</div>
+		
+		
+		
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/index_yb.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function () {
+				$(".wangwang").load("sousuo_nav.html");
+				$(".wangcai").load("footer.html");
+			})
+			
+		</script>
+	</body>
+</html>

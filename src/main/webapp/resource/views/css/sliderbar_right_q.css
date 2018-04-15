@@ -1,0 +1,94 @@
+#sliderbar_right_q{
+	position: absolute;
+	top: -15px;
+	right: 40px;
+	width: 475px;
+	min-height: 400px;
+	background: white;
+	display: block;
+	border-radius: 0;
+	box-shadow: 0 0 20px #d9d9d9;
+	display: none;
+}
+#sliderbar_right_q h2{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	display: block;	
+	font-size: 18px;
+    color: #313131;
+    font-weight: 400;
+}
+#sliderbar_right_q form{
+	position: relative;
+	width: 300px;
+	display: block;
+	top: 60px;
+	left: 50%;
+	margin-left: -150px;
+}
+#sliderbar_login_del{
+	position: absolute;
+	top: 10px;
+    right: 25px;
+    background: url(../img/close_denglui.png) no-repeat scroll center center;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#sliderbar_login_user,#sliderbar_login_pwd{
+	width: 250px;
+    height: 40px;
+    display: block;
+    background: url(../img/userphoto.jpeg) no-repeat;
+    background-size: 43px;
+    padding-left: 50px;
+    outline: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+#sliderbar_forget_pwd{
+	position: relative;
+	width: 250px;
+	height: 40px;
+	color: black;
+	font-size: 14px;
+	background: white;
+	margin-top: 20px;
+}
+.slider_span_left {
+	position: absolute;
+	left: 0;
+}
+.slider_span_right {
+	position: absolute;
+	right: -45px;
+	
+}
+#sliderbar_login_btn{
+	width: 300px;
+	height: 40px;
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	background: #00bad6;
+	letter-spacing: 15px;
+	outline: none;
+}
+.codeImg{
+	position: absolute;
+	background: white;
+	text-align: center;
+	right: 40px;
+	top: -140px;
+	display: none;
+}
+.codeImg img{
+	position: relative;
+	left: -6px;
+	top: -8px;
+}
+.right_QRcode:hover .codeImg{
+	display: block;
+}

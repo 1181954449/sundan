@@ -1,0 +1,131 @@
+
+添加订单接口文档
+地址: Http://10.80.13.49:8091/order/addOrder
+请求方式: get
+参数说明:
+参数名	        是否必须	    说明
+orderRemark        否        订单备注
+orderPay           是        支付方式
+orderPrice         是        订单价格
+order_addressId    是        订单地址id
+order_goodsId      是        订单商品id
+orderDistribution  是        配送方式
+返回说明:
+示例:
+{
+　　"errorCode":1,
+　　"msg":"鍒犻櫎鎴愬姛"
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息
+
+
+删除订单接口文档
+地址: Http://10.80.13.49:8091/order/delete
+请求方式: get
+参数说明:
+参数名	        是否必须	    说明
+orderId             是       订单Id
+返回说明:
+示例:
+{
+　　"errorCode":1,
+　　"msg":"鍒犻櫎鎴愬姛"
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息
+
+取消订单接口文档
+地址: Http://10.80.13.49:8091/order/cancelOrder
+请求方式: get
+参数说明:
+参数名	        是否必须	    说明
+orderId             是       订单Id
+返回说明:
+示例:
+{
+　　"errorCode":1,
+　　"msg":"鍒犻櫎鎴愬姛"
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息
+
+
+结算订单接口文档
+地址: Http://10.80.13.49:8091/order/pay
+请求方式: get
+参数说明:
+参数名	        是否必须	    说明
+orderId             是       订单Id
+返回说明:
+示例:
+{
+　　"errorCode":1,
+　　"msg":"鍒犻櫎鎴愬姛"
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息
+
+
+查看所有订单接口文档
+地址: Http://10.80.13.49:8091/order/findAllOrder
+请求方式: get
+参数说明:
+参数名	        是否必须	    说明
+userid            否        用户Id
+返回说明:
+示例:
+{
+　　"data":[
+　　　　{
+　　　　　　"goods_count":1,
+　　　　　　"orderCoding":"201804132",
+　　　　　　"orderDate":"2018-04-13",
+　　　　　　"orderDistribution":"閫佽揣鍒板",
+　　　　　　"orderForm":"鐢熸垚璁㈠崟",
+　　　　　　"orderId":6,
+　　　　　　"orderIsInvoice":"涓嶈",
+　　　　　　"orderPay":"鏀粯瀹�",
+　　　　　　"orderPrice":"123",
+　　　　　　"orderRemark":"涓轰粈涔�",
+　　　　　　"order_addressId":1,
+　　　　　　"order_goodsId":2,
+　　　　　　"user_id":2
+　　　　},
+　　　　{
+　　　　　　"goods_count":2,
+　　　　　　"orderCoding":"201804131504943",
+　　　　　　"orderDate":"2018-04-13",
+　　　　　　"orderDistribution":"閫佽揣鍒板",
+　　　　　　"orderForm":"鐢熸垚璁㈠崟",
+　　　　　　"orderId":7,
+　　　　　　"orderIsInvoice":"涓嶈",
+　　　　　　"orderPay":"鏀粯瀹�",
+　　　　　　"orderPrice":"123",
+　　　　　　"orderRemark":"涓嶇煡閬�",
+　　　　　　"order_addressId":1,
+　　　　　　"order_goodsId":3,
+　　　　　　"user_id":2
+　　　　}
+　　],
+　　"errCode":1,
+　　"msg":"鏌ヨ鎵€鏈夋垚鍔�"
+参数说明
+参数名		        说明
+errorCode           返回码
+msg                 返回信息
+orderId             订单ID
+goods_count         订单商品数量
+orderDate           生成订单时间
+orderForm           订单状态
+orderPay            支付方式
+orderDistribution   配送方式
+orderRemark         订单备注

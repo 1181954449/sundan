@@ -1,0 +1,109 @@
+
+点击购买的接口文档（同购物车的点击购买）
+
+地址: Http://10.80.13.49:8091/order／buy
+请求方式: get
+参数说明:
+参数名	    是否必须	    说明
+goodsId	    是		    商品Id（可设置多个， 购物车的结算）
+
+返回说明:
+示例:
+{
+{
+　　"data":{
+　　　　"addresses":[
+　　　　　　{
+　　　　　　　　"addressId":4,
+　　　　　　　　"city":"鏉炬睙鍖�",
+　　　　　　　　"consName":"jianjian",
+　　　　　　　　"consPhone":"13122222222",
+　　　　　　　　"county":"钃濇绉戞妧",
+　　　　　　　　"detAddress":"涓婃捣",
+　　　　　　　　"isDefault":0,
+　　　　　　　　"province":"涓婃捣",
+　　　　　　　　"userId":1,
+　　　　　　　　"zipCode":0
+　　　　　　},
+　　　　　　{
+　　　　　　　　"addressId":5,
+　　　　　　　　"city":"鏉炬睙鍖�",
+　　　　　　　　"consName":"jianjian",
+　　　　　　　　"consPhone":"13122222222",
+　　　　　　　　"county":"钃濇绉戞妧",
+　　　　　　　　"detAddress":"涓婃捣",
+　　　　　　　　"isDefault":0,
+　　　　　　　　"province":"涓婃捣",
+　　　　　　　　"userId":1,
+　　　　　　　　"zipCode":0
+　　　　　　},
+　　　　　　{
+　　　　　　　　"addressId":7,
+　　　　　　　　"city":"鏉炬睙鍖�",
+　　　　　　　　"consName":"jianjian",
+　　　　　　　　"consPhone":"13122222222",
+　　　　　　　　"county":"钃濇绉戞妧",
+　　　　　　　　"detAddress":"涓婃捣",
+　　　　　　　　"isDefault":0,
+　　　　　　　　"province":"涓婃捣",
+　　　　　　　　"userId":1,
+　　　　　　　　"zipCode":0
+　　　　　　},
+　　　　　　{
+　　　　　　　　"addressId":8,
+　　　　　　　　"city":"鏉炬睙鍖�",
+　　　　　　　　"consName":"jianjian",
+　　　　　　　　"consPhone":"13122222222",
+　　　　　　　　"county":"钃濇绉戞妧",
+　　　　　　　　"detAddress":"涓婃捣",
+　　　　　　　　"isDefault":0,
+　　　　　　　　"province":"涓婃捣",
+　　　　　　　　"userId":1,
+　　　　　　　　"zipCode":0
+　　　　　　}
+　　　　],
+　　　　"goodss":[
+　　　　　　{
+　　　　　　　　"category":0,
+　　　　　　　　"goodsFirstPic":"https://www.sundan.com/public/images/31/cd/c4/c3f37c97c00ef57124b5ffcdc2bdad81f1db76f8.jpg?1513761485#h",
+　　　　　　　　"goodsId":1,
+　　　　　　　　"goodsNumber":0,
+　　　　　　　　"goodsTitle":"浜у湴闊╁浗 杩涘彛鑹惧埄鍜� Astell&kern HIFI鎾斁鍣ˋK Jr锛堥摱鑹诧級",
+　　　　　　　　"price":"8888"
+　　　　　　},
+　　　　　　{
+　　　　　　　　"category":0,
+　　　　　　　　"goodsFirstPic":"https://www.sundan.com/public/images/4b/92/ee/3ccb32e0f99d4b6c2cd7dd43234c5f63dcd6b441.jpg?1522229384#h",
+　　　　　　　　"goodsId":2,
+　　　　　　　　"goodsNumber":0,
+　　　　　　　　"goodsTitle":"銆愯閲戙€戝崕涓猴紙HUAWEI锛塒20 AI鏅烘収鍏ㄩ潰灞忓叏缃戦€氱増 绉诲姩鑱旈€氱數淇�4G鎵嬫満 鍙屽崱鍙屽緟",
+　　　　　　　　"price":"1111"
+　　　　　　}
+　　　　],
+　　　　"orderId":0,
+　　　　"order_addressId":0,
+　　　　"order_goodsId":0
+　　},
+　　"errCode":0,
+　　"msg":"鐢熸垚澶辫触"
+}
+
+
+}
+参数说明
+参数名		    说明
+errorCode       返回码
+msg             返回信息
+addressId       收货地址Id
+consName        收货人姓名
+consPhone       收货人电话
+county          县／镇
+city            市
+province        省
+userId          用户Id
+isDefault       是否是默认地址（1表示默认）
+zipCode         邮编
+goodsId         商品id
+goodsTitle      商品简介
+price           商品价格
+goodsFirstPic   商品价格
