@@ -110,7 +110,7 @@
 		SELECT * FROM sun_goods
 		<where>
 			<if test="categoryId!=null">
-				and sun_goods.categoryid = #{categoryId}
+				and sun_goods.categoryid = '${categoryId}'
 			</if>
 			<if test="parentId!=null">
 				and sun_goods.parentId = #{parentId}
@@ -129,7 +129,7 @@
 				SELECT sun_specs.specsId FROM sun_specs
 				<where>
 					sun_specs.specsBrand = #{specsBrand}
-					<if test="categoryId!=null">
+					<if test="specsBrand!=null">
 						and sun_goods.categoryid = #{categoryId}
 					</if>
 					<if test="parentId!=null">
@@ -144,6 +144,88 @@
 		</where>
 		limit #{page},50
 	</select>
+	<!--根据价格排序-->
+	<select id="findGoodsOrderByPrice" parameterMap="contents" resultMap="goodsInfoResult">
+		SELECT * FROM sun_goods
+		<where>
+			<if test="categoryId!=null">
+				and sun_goods.categoryid = '${categoryId}'
+			</if>
+			<if test="parentId!=null">
+				and sun_goods.parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sun_goods.sunId = #{sunId}
+			</if>
+			<if test="max!=null">
+				and <![CDATA[sun_goods.price < #{max}]]>
+			</if>
+			<if test="min!=null">
+				and <![CDATA[sun_goods.price > #{min}]]>
+			</if>
+			<if test="specsBrand!=null">
+				and sun_goods.specs_brank =(
+				SELECT sun_specs.specsId FROM sun_specs
+				<where>
+					sun_specs.specsBrand = #{specsBrand}
+					<if test="specsBrand!=null">
+						and sun_goods.categoryid = #{categoryId}
+					</if>
+					<if test="parentId!=null">
+						and sun_goods.parentId = #{parentId}
+					</if>
+					<if test="sunId!=null">
+						and sun_goods.sunId = #{sunId}
+					</if>
+				</where>
+				)
+			</if>
+		</where>
+		ORDER BY sun_goods.price DESC
+		limit #{page},50
+	</select>
+
+	<!--根据价格排序-->
+	<select id="findGoodsOrderByPriceAsc" parameterMap="contents" resultMap="goodsInfoResult">
+		SELECT * FROM sun_goods
+		<where>
+			<if test="categoryId!=null">
+				and sun_goods.categoryid = '${categoryId}'
+			</if>
+			<if test="parentId!=null">
+				and sun_goods.parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sun_goods.sunId = #{sunId}
+			</if>
+			<if test="max!=null">
+				and <![CDATA[sun_goods.price < #{max}]]>
+			</if>
+			<if test="min!=null">
+				and <![CDATA[sun_goods.price > #{min}]]>
+			</if>
+			<if test="specsBrand!=null">
+				and sun_goods.specs_brank =(
+				SELECT sun_specs.specsId FROM sun_specs
+				<where>
+					sun_specs.specsBrand = #{specsBrand}
+					<if test="specsBrand!=null">
+						and sun_goods.categoryid = #{categoryId}
+					</if>
+					<if test="parentId!=null">
+						and sun_goods.parentId = #{parentId}
+					</if>
+					<if test="sunId!=null">
+						and sun_goods.sunId = #{sunId}
+					</if>
+				</where>
+				)
+			</if>
+		</where>
+		ORDER BY sun_goods.price
+		limit #{page},50
+	</select>
+
 	<select id="findGoodsByContentPage" parameterMap="contents" resultType="int">
 		SELECT COUNT(*) FROM sun_goods
 		<where>
@@ -164,5 +246,32 @@
 		<![CDATA[select * from sun_goods
 		   WHERE
 		   goodsId < (select max(goodsId) from sun_goods) and goodsId > (select (max(goodsId)-9) from sun_goods)]]>
+	</select>
+	
+	<!--精品推荐-->
+	<select id="findGoodsByBoutique" parameterMap="contents" resultMap="goodsInfoResult">
+		SELECT sun_goods.goodsId,sun_goods.goodsTitle,sun_goods.goodsFirstPicture,sun_goods.price
+		FROM sun_goods
+		<where>
+			<if test="categoryId!=null">
+				and sun_goods.categoryid = #{categoryId}
+			</if>
+			<if test="parentId!=null">
+				and sun_goods.parentId = #{parentId}
+			</if>
+			<if test="sunId!=null">
+				and sun_goods.sunId = #{sunId}
+			</if>
+			AND sun_goods.isHot = 1
+			limit 0,4
+		</where>
+	</select>
+	<select id="findGoodsByNewPage" resultType="int">
+		SELECT COUNT(*) FROM sun_goods
+	</select>
+	<select id="findGoodsByNew" resultMap="goodsInfoResult">
+		SELECT sun_goods.goodsId,sun_goods.goodsTitle,sun_goods.goodsFirstPicture,sun_goods.price
+		FROM sun_goods
+		limit #{star},12
 	</select>
 </mapper>

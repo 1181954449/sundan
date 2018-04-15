@@ -80,5 +80,31 @@ public class GoodsServiceImp implements GoodsService{
         return goodsDao.findGoodsByRecommend();
     }
 
+    @Override
+    public String findGoodsByBoutique(int id) {
+        Map<String, Object> map1 = new HashMap();
+        if ((id > 1000) && (id < 2000)) {
+            map1.put("categoryid", Integer.valueOf(id));
+        } else if ((id > 2000) && (id < 3000)) {
+            map1.put("parentId", Integer.valueOf(id));
+        } else {
+            map1.put("sunId", Integer.valueOf(id));
+        }
+        List<Goods> goodsByBoutique = goodsDao.findGoodsByBoutique(map1);
+        String json = JSON.toJSONString(goodsByBoutique);
+        return json;
+    }
+
+    @Override
+    public String findGOodsByNew(int page) {
+        int goodsByNewPage = goodsDao.findGoodsByNewPage();
+        goodsByNewPage  = (int )Math.ceil(goodsByNewPage * 1.0 / 9);
+        List<Goods> goodsByNew = goodsDao.findGoodsByNew(page);
+        Map<String ,Object> map = new HashMap<>();
+        map.put("page",goodsByNewPage);
+        map.put("goodss",goodsByNew);
+        return JSON.toJSONString(map);
+    }
+
 
 }

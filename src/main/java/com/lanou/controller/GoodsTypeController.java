@@ -30,8 +30,22 @@ public class GoodsTypeController {
     }
     // 查询目录层次
     @RequestMapping("/findGoodsById")
-    public void findGoodsById(int id, @RequestParam(defaultValue="0") int page,@RequestParam(defaultValue="0")String goodsBrank, @RequestParam(defaultValue="0")float max,@RequestParam(defaultValue="0")float min ,HttpServletResponse response){
+    public void findGoodsById(int id, @RequestParam(defaultValue="0") int page,String goodsBrank, @RequestParam(defaultValue="0")float max,@RequestParam(defaultValue="0")float min ,HttpServletResponse response){
         String json = this.goodsTypeService.findTypeById01(id, page, goodsBrank, max, min);
+        System.out.println("jhaajajsdasasdsaaaaaaaaaaa>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         Util.getWriter(response).append(json);
+    }
+
+    // 按照价格排序降序
+    @RequestMapping("/findGoodsOrderByPriceDesc")
+    public void findGoodsOrderByPrice(int id, @RequestParam(defaultValue="0") int page,String goodsBrank, @RequestParam(defaultValue="0")float max,@RequestParam(defaultValue="0")float min ,HttpServletResponse response){
+        String goodsOrderByPrice = goodsTypeService.findGoodsOrderByPrice(id, page, goodsBrank, max, min);
+        Util.getWriter(response).append(goodsOrderByPrice);
+    }
+    @RequestMapping("/findGoodsOrderByPriceAsc")
+
+    public void findGoodsOrderByPriceAsc(int id, @RequestParam(defaultValue="0") int page,String goodsBrank, @RequestParam(defaultValue="0")float max,@RequestParam(defaultValue="0")float min,HttpServletResponse response){
+        String goodsOrderByPrice = goodsTypeService.findGoodsOrderByPriceAsc(id, page, goodsBrank, max, min);
+        Util.getWriter(response).append(goodsOrderByPrice);
     }
 }

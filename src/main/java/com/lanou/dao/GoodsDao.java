@@ -34,4 +34,15 @@ public interface GoodsDao {
     public abstract int findGoodsByContentPage(Map<String, Object> map);
     // 首页推荐八个商品
     public List<Goods> findGoodsByRecommend();
+
+    // 精品推荐商品
+    public List<Goods> findGoodsByBoutique(Map<String, Object> map);
+    // 查询一共多少条记录
+    public int findGoodsByNewPage();
+
+    public List<Goods> findGoodsByNew(int page);
+    // 根据价格排序
+    public List<Goods> findGoodsOrderByPrice(Map<String, Object> map);
+    // 按照价格升序
+    public List<Goods> findGoodsOrderByPriceAsc(Map<String, Object> map);
 }

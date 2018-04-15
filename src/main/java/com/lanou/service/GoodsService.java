@@ -17,4 +17,10 @@ public interface GoodsService {
     public String findGoodsByItemize(Map<String,Object> maps);
     // 首页推荐八个商品
     public List<Goods> findGoodsByRecommend();
+
+    // 精品推荐商品
+    public String findGoodsByBoutique(int id);
+
+    // 新品查询
+    public String findGOodsByNew(int page);
 }

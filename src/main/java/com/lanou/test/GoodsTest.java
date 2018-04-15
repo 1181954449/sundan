@@ -20,4 +20,19 @@ public class GoodsTest {
         List<Goods> goodsByRecommend = goodsService.findGoodsByRecommend();
         System.out.println("商品推荐8个:" + JSON.toJSONString(goodsByRecommend));
     }
+
+    @Test
+    public void test02(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsService goodsService = (GoodsService) applicationContext.getBean("goodsService");
+        String goodsByBoutique = goodsService.findGoodsByBoutique(3018);
+        System.out.println("精品:" + goodsByBoutique);
+    }
+    @Test
+    public void test03(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsService goodsService = (GoodsService) applicationContext.getBean("goodsService");
+        String gOodsByNew = goodsService.findGOodsByNew(0);
+        System.out.println(gOodsByNew);
+    }
 }

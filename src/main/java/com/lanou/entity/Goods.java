@@ -17,6 +17,15 @@ public class Goods {
     private String goodsFirstPic,isHot;
     private int category;
 
+    public Goods(int goodsId, String goodsTitle, String price, String goodsFirstPic, String isHot, int category) {
+        this.goodsId = goodsId;
+        this.goodsTitle = goodsTitle;
+        this.price = price;
+        this.goodsFirstPic = goodsFirstPic;
+        this.isHot = isHot;
+        this.category = category;
+    }
+
     public int getCategory() {
         return category;
     }
