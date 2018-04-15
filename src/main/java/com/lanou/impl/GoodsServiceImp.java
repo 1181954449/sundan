@@ -1,12 +1,15 @@
 package com.lanou.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.lanou.dao.GoodsDao;
 import com.lanou.entity.Goods;
+import com.lanou.entity.Goods_type;
 import com.lanou.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lanou.entity.goods_img;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -104,6 +107,72 @@ public class GoodsServiceImp implements GoodsService{
         map.put("page",goodsByNewPage);
         map.put("goodss",goodsByNew);
         return JSON.toJSONString(map);
+    }
+
+
+    @Override
+    public Goods findgoodsdDetails(int goodsId) {
+        Goods goods = goodsDao.findgoodsdDetails(goodsId);
+        List<goods_img> imgList = goodsDao.findgoodsImg(goodsId);
+        List<Map<String, String>> map = goodsDao.selectgoodsType(goodsId);
+
+        Map<String, List<Map<String, String>>> list = new HashMap<>();
+        List<String> strings = goodsDao.selectSpecTitle(goodsId);
+        System.out.println(strings);
+        List<Integer> ints = goodsDao.selectSpecId(goodsId);
+        System.out.println(ints);
+        for (int i = 0; i < ints.size(); i++){
+
+            List<Map<String, String>> maps = goodsDao.selectValue(ints.get(i));
+            System.out.println(maps);
+            list.put(strings.get(i), maps);
+        }
+        System.out.println(list);
+
+        List<Goods> kindGoods = findKindGoods(goodsId);
+
+        // 塞值
+        goods.setGoods_imgs(imgList);
+        goods.setTypeList(map);
+        goods.setSpecList(list);
+        goods.setGoodss(kindGoods);
+        return goods;
+    }
+
+    @Override
+    public List<goods_img> findgoodsCutImg(Goods_type goods_type) {
+        int typeNumber = goodsDao.findgoodsTypeNumber(goods_type);
+        System.out.print(typeNumber);
+        List<goods_img> imgList = goodsDao.findgoodsCutImg(typeNumber);
+        return imgList;
+    }
+
+
+
+    public List<Goods> findKindGoods(int goodsId){
+        int propertyId = goodsDao.goodsProperty(goodsId);
+        System.out.println(propertyId);
+        List<Goods> goodss = goodsDao.goodsList(propertyId);
+        System.out.println(goodss);
+        System.out.println(goodss.size());
+        return goodss;
+    }
+
+    public void findgoodsType(int goodsId){
+        Map<String, List<Map<String, String>>> list = new HashMap<>();
+        List<String> strings = goodsDao.selectSpecTitle(goodsId);
+        System.out.println(strings);
+        List<Integer> ints = goodsDao.selectSpecId(goodsId);
+        System.out.println(ints);
+        for (int i = 0; i < ints.size(); i++){
+
+            List<Map<String, String>> maps = goodsDao.selectValue(ints.get(i));
+            System.out.println(maps);
+            list.put(strings.get(i), maps);
+        }
+        System.out.println(list);
+        String s = JSON.toJSONString(list);
+        System.out.println(s);
     }
 
 

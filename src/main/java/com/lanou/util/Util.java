@@ -1,10 +1,14 @@
 package com.lanou.util;
 
 import com.alibaba.fastjson.JSON;
+<<<<<<< HEAD
 import com.lanou.entity.User;
 import com.lanou.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+=======
+import com.lanou.entity.Goods;
+>>>>>>> de05f203013ac4bca021422c88d338c03ecc53da
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,6 +54,15 @@ public class Util {
         String json = JSON.toJSONString(maps);
         return json;
     }
+    public static String creatJson(int errCode, String msg, Object data){
+        Map<String,Object> maps = new HashMap<>();
+        maps.put("errCode", errCode);
+        maps.put("msg", msg);
+        maps.put("data",data);
+        String json = JSON.toJSONString(maps);
+        return json;
+    }
+
     public static PrintWriter getWriter(HttpServletResponse response){
         PrintWriter writer =null;
         try {
