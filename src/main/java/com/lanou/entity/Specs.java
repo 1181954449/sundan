@@ -15,9 +15,36 @@ public class Specs {
     private String bind;
     private String color;
     private String type;
+    private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public Specs() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Specs{" +
+                "specsId=" + specsId +
+                ", categoryId=" + categoryId +
+                ", specsBrand='" + specsBrand + '\'' +
+                ", parentId=" + parentId +
+                ", sunId=" + sunId +
+                ", max=" + max +
+                ", min=" + min +
+                ", material='" + material + '\'' +
+                ", bind='" + bind + '\'' +
+                ", color='" + color + '\'' +
+                ", type='" + type + '\'' +
+                ", img='" + img + '\'' +
+                '}';
     }
 
     public int getSpecsId() {
@@ -110,20 +137,4 @@ public class Specs {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Specs{" +
-                "specsId=" + specsId +
-                ", categoryId=" + categoryId +
-                ", specsBrand='" + specsBrand + '\'' +
-                ", parentId=" + parentId +
-                ", sunId='" + sunId + '\'' +
-                ", max=" + max +
-                ", min=" + min +
-                ", material='" + material + '\'' +
-                ", bind='" + bind + '\'' +
-                ", color='" + color + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
 }

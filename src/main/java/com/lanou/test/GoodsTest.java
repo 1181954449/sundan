@@ -47,6 +47,22 @@ public class GoodsTest {
         String json = Util.creatJson(0, "商品详情页查询成功", goods);
     }
 
+<<<<<<< HEAD
+    @Test
+    public void test02(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsService goodsService = (GoodsService) applicationContext.getBean("goodsService");
+        String goodsByBoutique = goodsService.findGoodsByBoutique(3018);
+        System.out.println("精品:" + goodsByBoutique);
+    }
+    @Test
+    public void test03(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsService goodsService = (GoodsService) applicationContext.getBean("goodsService");
+        String gOodsByNew = goodsService.findGOodsByNew(0);
+        System.out.println(gOodsByNew);
+    }
+=======
 
     @Test
     public void test04(){
@@ -72,4 +88,5 @@ public class GoodsTest {
         goodsService.findKindGoods(2);
     }
 
+>>>>>>> de05f203013ac4bca021422c88d338c03ecc53da
 }

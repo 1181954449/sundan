@@ -36,4 +36,5 @@ public interface UserDao {
     public int alterPayPass(User user);
     // 添加发票
     public int saveBill(User user);
+
 }

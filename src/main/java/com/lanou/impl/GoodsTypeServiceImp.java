@@ -50,16 +50,16 @@ public class GoodsTypeServiceImp implements GoodsTypeService{
 
         Map<String, Object> map = new HashMap();
 
-        map.put("current directory", typeById);
+        map.put("current", typeById);
 
-        map.put("parent directory", second);
+        map.put("parent", second);
 
-        map.put("substratum directory", lower);
+        map.put("substratum", lower);
 
         map.put("first", first);
         Map<String, Object> map1 = new HashMap();
         if ((id > 1000) && (id < 2000)) {
-            map1.put("categoryid", Integer.valueOf(id));
+            map1.put("categoryId", id);
         } else if ((id > 2000) && (id < 3000)) {
             map1.put("parentId", Integer.valueOf(id));
         } else {
@@ -83,6 +83,71 @@ public class GoodsTypeServiceImp implements GoodsTypeService{
 
         List<Specs> specsByContent = this.specsDao.findSpecsByContent(map1);
         map.put("allGoodsSpecs", specsByContent);
+        String json = JSON.toJSONString(map);
+        return json;
+    }
+
+    @Override
+    public String findGoodsOrderByPrice(int id, int page, String goodsBrank, float max, float min) {
+
+        Map<String, Object> map = new HashMap();
+
+        Map<String, Object> map1 = new HashMap();
+        if ((id > 1000) && (id < 2000)) {
+            map1.put("categoryId", id);
+        } else if ((id > 2000) && (id < 3000)) {
+            map1.put("parentId", Integer.valueOf(id));
+        } else {
+            map1.put("sunId", Integer.valueOf(id));
+        }
+        map1.put("page", Integer.valueOf(page));
+        if (goodsBrank != null) {
+            map1.put("specsBrand", goodsBrank);
+        }
+        if ((max != 0.0F) && (min != 0.0F))
+        {
+            map1.put("max", Float.valueOf(max));
+            map1.put("min", Float.valueOf(min));
+        }
+        int goodsByContentPage = this.goodsDao.findGoodsByContentPage(map1);
+        map.put("goodsByContentPage", Integer.valueOf((int)Math.ceil(goodsByContentPage * 1.0D / 50.0D)));
+
+        List<Goods> goodsByContents = this.goodsDao.findGoodsOrderByPrice(map1);
+        System.out.println(goodsByContents);
+        map.put("goods", goodsByContents);
+        String json = JSON.toJSONString(map);
+        return json;
+    }
+
+    @Override
+    public String findGoodsOrderByPriceAsc(int id, int page, String goodsBrank, float max, float min) {
+
+
+        Map<String, Object> map = new HashMap();
+
+        Map<String, Object> map1 = new HashMap();
+        if ((id > 1000) && (id < 2000)) {
+            map1.put("categoryId", id);
+        } else if ((id > 2000) && (id < 3000)) {
+            map1.put("parentId", Integer.valueOf(id));
+        } else {
+            map1.put("sunId", Integer.valueOf(id));
+        }
+        map1.put("page", Integer.valueOf(page));
+        if (goodsBrank != null) {
+            map1.put("specsBrand", goodsBrank);
+        }
+        if ((max != 0.0F) && (min != 0.0F))
+        {
+            map1.put("max", Float.valueOf(max));
+            map1.put("min", Float.valueOf(min));
+        }
+        int goodsByContentPage = this.goodsDao.findGoodsByContentPage(map1);
+        map.put("goodsByContentPage", Integer.valueOf((int)Math.ceil(goodsByContentPage * 1.0D / 50.0D)));
+
+        List<Goods> goodsByContents = this.goodsDao.findGoodsOrderByPriceAsc(map1);
+        System.out.println(goodsByContents);
+        map.put("goods", goodsByContents);
         String json = JSON.toJSONString(map);
         return json;
     }

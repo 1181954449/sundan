@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
-import com.lanou.entity.goods_img;
-import com.lanou.entity.Goods_type;
 
 /**
  * Created by lanou on 2018/4/8.
@@ -37,7 +35,12 @@ public interface GoodsDao {
     // 首页推荐八个商品
     public List<Goods> findGoodsByRecommend();
 
+    // 精品推荐商品
+    public List<Goods> findGoodsByBoutique(Map<String, Object> map);
+    // 查询一共多少条记录
+    public int findGoodsByNewPage();
 
+<<<<<<< HEAD
 
 
     // 商品详情页数据查询
@@ -68,4 +71,11 @@ public interface GoodsDao {
     public int findgoodsTypeNumber(Goods_type goods_type);
     // 根据goodsId获取goods
     public Goods selectGoodsList(int goodsId);
+=======
+    public List<Goods> findGoodsByNew(int page);
+    // 根据价格排序
+    public List<Goods> findGoodsOrderByPrice(Map<String, Object> map);
+    // 按照价格升序
+    public List<Goods> findGoodsOrderByPriceAsc(Map<String, Object> map);
+>>>>>>> 4ab554c5249317ebf19a04c509e677ab85326ce9
 }

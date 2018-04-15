@@ -29,6 +29,7 @@
 		<result column="bind" property="bind" jdbcType="VARCHAR" />
 		<result column="color" property="color" jdbcType="VARCHAR" />
 		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="specsBrandImg" property="img" jdbcType="VARCHAR" />
 	</resultMap>
 	<parameterMap id="contents" type="java.util.Map">
 		<parameter property="categoryId" javaType="int"/>

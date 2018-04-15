@@ -65,6 +65,7 @@ public class UserController {
     // 用户验证码请求
     @RequestMapping("/valicationImg")
     public void valicationImg(HttpServletResponse response) throws IOException {
+        System.out.println(1111);
         PrintWriter writer = Util.getWriter(response);
         ImgUtil img = new ImgUtil();
         BufferedImage image = img.createImage();

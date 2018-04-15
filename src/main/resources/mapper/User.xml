@@ -88,4 +88,5 @@
 	<update id="alterPayPass" parameterType="User">
 		UPDATE sun_user SET userPayPass = '${userPayPass}' WHERE userId = '${userId}'
 	</update>
+
 </mapper>

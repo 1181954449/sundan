@@ -23,6 +23,7 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<!-- 配置MVC拦截器 -->
 	<mvc:interceptors>
+		<bean class="com.lanou.Interceptor.CrossDomain"></bean>
 		<mvc:interceptor>
 			<mvc:mapping path="/user/userReg"/>
 			<bean class="com.lanou.Interceptor.UserInterceptor"></bean>

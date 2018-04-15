@@ -1,8 +1,16 @@
 package com.lanou.util;
 
 import com.alibaba.fastjson.JSON;
+<<<<<<< HEAD
+import com.lanou.entity.User;
+import com.lanou.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+=======
 import com.lanou.entity.Goods;
+>>>>>>> de05f203013ac4bca021422c88d338c03ecc53da
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,6 +24,7 @@ import java.util.Map;
 /**
  * Created by lanou on 2018/4/3.
  */
+@Controller
 public class Util {
     public static  String getMD5(String md5){
         String passMD5 = null;
@@ -69,4 +78,7 @@ public class Util {
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "x-requested-with,Content-Type");
     }
+
+
+
 }

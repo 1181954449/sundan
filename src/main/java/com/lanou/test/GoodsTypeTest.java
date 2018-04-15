@@ -8,9 +8,11 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.servlet.http.HttpSessionListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Created by lanou on 2018/4/8.
@@ -68,7 +70,17 @@ public class GoodsTypeTest {
     {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
         GoodsTypeService goodsService = (GoodsTypeService)applicationContext.getBean("goodsTypeService");
-        String typeById01 = goodsService.findTypeById01(2005, 0, "华为", 0.0F, 0.0F);
+        String typeById01 = goodsService.findTypeById01(1002, 0, null, 0.0F, 0.0F);
         System.out.println(typeById01);
     }
+
+    @Test
+    public void test09()
+    {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+        GoodsTypeService goodsService = (GoodsTypeService)applicationContext.getBean("goodsTypeService");
+        String typeById01 = goodsService.findGoodsOrderByPriceAsc(2005, 0, null, 0.0F, 0.0F);
+        System.out.println(typeById01);
+    }
+
 }
